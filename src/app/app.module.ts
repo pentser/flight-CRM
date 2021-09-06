@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TicketsComponent } from './components/tickets/tickets.component';
 import { LogsComponent } from './components/logs/logs.component';
+import { TutHttpComponent } from './components/tut-http/tut-http.component';
+
 
 @NgModule({
   declarations: [
@@ -26,11 +29,15 @@ import { LogsComponent } from './components/logs/logs.component';
     MessagesComponent,
     PageNotFoundComponent,
     TicketsComponent,
-    LogsComponent
+    LogsComponent,
+    TutHttpComponent,
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
