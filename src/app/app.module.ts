@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { TicketsComponent } from './components/tickets/tickets.component';
 import { LogsComponent } from './components/logs/logs.component';
 import { TutHttpComponent } from './components/tut-http/tut-http.component';
+import { AirlinesComponent } from './components/airlines/airlines.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { TutHttpComponent } from './components/tut-http/tut-http.component';
     TicketsComponent,
     LogsComponent,
     TutHttpComponent,
+    AirlinesComponent,
 
 
   ],

@@ -15,11 +15,11 @@ export interface Ticket{
 
 export class TicketApi {
 
-  flights:Observable<Ticket[]>=null;
+  tickets:Observable<Ticket[]>=null;
   readonly url='http://localhost:3000/admin/api/get_all_tickets';
 
   constructor(private httpClient:HttpClient) {
-    this.flights=httpClient.get<Ticket[]>(this.url)
+    this.tickets=httpClient.get<Ticket[]>(this.url)
   }
 /*
    getById(id: number) {

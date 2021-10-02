@@ -1,1 +1,8 @@
 
+<div *ngIf="ticketApi.tickets| async as tickets">
+  <pre>
+
+    {{ tickets | json }}
+
+  </pre>
+</div>

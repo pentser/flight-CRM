@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TicketApi} from '../../services/ticket-api';
 
 @Component({
   selector: 'app-tickets',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicketsComponent implements OnInit {
 
-  constructor() { }
+  ticket=null;
+  constructor(public ticketApi:TicketApi) { }
 
   ngOnInit(): void {
   }

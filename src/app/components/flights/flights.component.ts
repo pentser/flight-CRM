@@ -8,7 +8,7 @@ import {FlightApi} from '../../services/flight-api';
 })
 export class FlightsComponent implements OnInit {
 
-  post=null;
+  flight=null;
   constructor(public flightApi:FlightApi) { }
 
   ngOnInit(): void {
