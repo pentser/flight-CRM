@@ -1,1 +1,7 @@
-<p>airlines works!</p>
+<div *ngIf="airlineApi.airlines| async as airlines">
+  <pre>
+
+    {{ airlines | json }}
+
+  </pre>
+</div>

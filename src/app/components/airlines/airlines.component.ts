@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AirlineApi} from '../../services/airline-api';
 
 @Component({
   selector: 'app-airlines',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AirlinesComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public airlineApi:AirlineApi) { }
+  airline=null;
   ngOnInit(): void {
   }
 
