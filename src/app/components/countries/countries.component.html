@@ -1,3 +1,10 @@
-<p>countries works!</p>
+
+<div *ngIf="countryApi.countries| async as countries">
+  <pre>
+
+    {{ countries | json }}
+
+  </pre>
+</div>
 
 

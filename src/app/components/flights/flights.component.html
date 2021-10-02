@@ -1,1 +1,8 @@
-<p>flights works!</p>
+
+<div *ngIf="flightApi.flights| async as posts">
+  <pre>
+
+    {{ posts | json }}
+
+  </pre>
+</div>

@@ -1,1 +1,8 @@
-<p>customers works!</p>
+
+<div *ngIf="customerApi.customers| async as customers">
+  <pre>
+
+    {{ customers | json }}
+
+  </pre>
+</div>

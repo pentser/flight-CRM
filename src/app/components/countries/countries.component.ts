@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CountryApi} from '../../services/country-api';
 
 @Component({
   selector: 'app-countries',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./countries.component.scss']
 })
 export class CountriesComponent implements OnInit {
+  
 
-  constructor() { }
+  constructor(public countryApi:CountryApi) { }
 
+  country=null;
   ngOnInit(): void {
   }
 
