@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { TicketsComponent } from './components/tickets/tickets.component';
 import { LogsComponent } from './components/logs/logs.component';
 import { TutHttpComponent } from './components/tut-http/tut-http.component';
 import { AirlinesComponent } from './components/airlines/airlines.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -33,13 +35,15 @@ import { AirlinesComponent } from './components/airlines/airlines.component';
     LogsComponent,
     TutHttpComponent,
     AirlinesComponent,
+    LoginComponent,
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

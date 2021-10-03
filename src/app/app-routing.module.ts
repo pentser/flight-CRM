@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
+import {LoginComponent} from "./components/login/login.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import {CustomersComponent} from "./components/customers/customers.component"
 import {FlightsComponent} from "./components/flights/flights.component";
@@ -11,12 +12,13 @@ import { MessagesComponent } from "./components/messages/messages.component";
 import { TutHttpComponent } from './components/tut-http/tut-http.component';
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 import { AirlinesComponent } from './components/airlines/airlines.component';
+import {UserGuard} from './guards/user.guard'
 
 
 const appRouter: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: '', component: LoginComponent },
   { path: 'customers', component:CustomersComponent  },
-  { path: 'flights', component:FlightsComponent},
+  { path: 'flights', component:FlightsComponent,canActivate:[UserGuard]},
   { path: 'countries',component:CountriesComponent},
   { path: 'tickets', component:TicketsComponent},
   { path: 'airlines', component:AirlinesComponent},
