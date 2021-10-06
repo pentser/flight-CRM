@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { Subscriber, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss'],
 })
-export class LoginComponent implements OnInit,OnDestroy {
+export class SignupComponent implements OnInit,OnDestroy {
 
   constructor( private router: Router,private loginApi:LoginApi) {}
 
@@ -39,3 +39,4 @@ export class LoginComponent implements OnInit,OnDestroy {
 
 
 }
+

@@ -2,8 +2,8 @@
   <div class="col-2"></div>
   <div class="col-4">
     <form
-      #loginForm="ngForm"
-      (ngSubmit)="onSubmit(loginForm)"
+      #signupForm="ngForm"
+      (ngSubmit)="onSubmit(signupForm)"
       novalidate
       autocomplete="off"
     >
@@ -53,8 +53,28 @@
         </div>
       </div>
 
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #emailF="ngModel"
+            ngModel
+            name="email"
+            required
+            [ngClass]="{ 'is-invalid': emailF.errors && emailF.touched }"
+            type="email"
+            id="email"
+            class="form-control"
+            autocomplete="current-email"
+          />
+          <div [hidden]="!emailF.errors?.required" class="invalid-feedback">
+            Email is required
+          </div>
+        </div>
+      </div>
+
       <button
-        [disabled]="!loginForm.form.valid"
+        [disabled]="!signupForm.form.valid"
         class="btn btn-lg btn-primary btn-block"
         type="submit"
       >

@@ -18,6 +18,7 @@ import { LogsComponent } from './components/logs/logs.component';
 import { TutHttpComponent } from './components/tut-http/tut-http.component';
 import { AirlinesComponent } from './components/airlines/airlines.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { LoginComponent } from './components/login/login.component';
     TutHttpComponent,
     AirlinesComponent,
     LoginComponent,
+    SignupComponent,
 
 
   ],
