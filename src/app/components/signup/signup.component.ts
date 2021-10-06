@@ -1,7 +1,7 @@
-import {LoginApi} from '../../services/login-api';
+import {SignupApi} from '../../services/signup-api';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscriber, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +10,7 @@ import { Subscriber, Subscription } from 'rxjs';
 })
 export class SignupComponent implements OnInit,OnDestroy {
 
-  constructor( private router: Router,private loginApi:LoginApi) {}
+  constructor( private router: Router,private signupApi:SignupApi) {}
 
 
   ngOnInit(): void {}
@@ -18,11 +18,10 @@ export class SignupComponent implements OnInit,OnDestroy {
   onSub:Subscription=null;
   onSubmit(form) {
 
-    //await loginWithEmail(this.form.email, this.form.password);
     if(form.status=="VALID")
     {
       console.log("form:",form.value);
-      this.onSub=this.loginApi.getLogin(form.value).subscribe((data)=>{
+      this.onSub=this.signupApi.signup(form.value).subscribe((data)=>{
         console.log(data)
       })
 
