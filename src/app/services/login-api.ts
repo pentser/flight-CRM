@@ -10,4 +10,8 @@ export class LoginApi{
   public getLogin(params) {
     return this.httpClient.post('http://localhost:3000/login',params);
   }
+
+  public readTokens() {
+    return this.httpClient.get('http://localhost:3000/read_cookies');
+  }
 }
