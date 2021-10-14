@@ -25,7 +25,11 @@ export class LoginApi{
     return this.httpClient.post('http://localhost:3000/login',params);
   }
 
-  public readTokens() {
+  public readheader() {
     return this.httpClient.get('http://localhost:3000/read_header',this.httpOptions);
+  }
+
+  public readCookie() {
+    return this.httpClient.get('http://localhost:3000/read-cookies');
   }
 }

@@ -13,8 +13,8 @@ export class DashboardComponent implements OnInit,OnDestroy {
   res={};
   constructor(private loginApi:LoginApi) {
 
-    this.onSub=this.loginApi.readTokens().subscribe((data)=>{
-      console.log('cookies',data)
+     this.onSub=this.loginApi.readCookie().subscribe((data)=>{
+      console.log(data)
       this.res=data;
     })
 
