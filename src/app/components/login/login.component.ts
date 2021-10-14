@@ -1,5 +1,5 @@
 import {LoginApi} from '../../services/login-api';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscriber, Subscription } from 'rxjs';
 
@@ -10,6 +10,8 @@ import { Subscriber, Subscription } from 'rxjs';
 })
 export class LoginComponent implements OnInit,OnDestroy {
 
+
+
   constructor( private router: Router,private loginApi:LoginApi) {}
 
 
@@ -18,12 +20,13 @@ export class LoginComponent implements OnInit,OnDestroy {
   onSub:Subscription=null;
   onSubmit(form) {
 
-    //await loginWithEmail(this.form.email, this.form.password);
+
     if(form.status=="VALID")
     {
       console.log("form:",form.value);
       this.onSub=this.loginApi.getLogin(form.value).subscribe((data)=>{
-        console.log(data)
+        console.log(data);
+   
       })
 
       //this.router.navigate(['/customers']);

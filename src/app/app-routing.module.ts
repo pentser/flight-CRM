@@ -16,7 +16,7 @@ import {UserGuard} from './guards/user.guard'
 
 
 const appRouter: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: DashboardComponent },
   { path: 'customers', component:CustomersComponent  },
   { path: 'flights', component:FlightsComponent,canActivate:[UserGuard]},
   { path: 'countries',component:CountriesComponent},

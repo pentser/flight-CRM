@@ -41,7 +41,7 @@ export class AuthApi {
 
   private request(
     method: "post" | "get",
-    type: "login" | "signup" | "profile",
+    type: "login" | "signup" | "dashboard",
     user?: TokenPayload
   ): Observable<any> {
     let base$;
@@ -93,7 +93,7 @@ export class AuthApi {
     }
   }
 
-  public register(user: TokenPayload): Observable<any> {
+  public signup(user: TokenPayload): Observable<any> {
     return this.request("post", "signup", user);
   }
 
@@ -101,8 +101,8 @@ export class AuthApi {
     return this.request("post", "login", user);
   }
 
-  public profile(): Observable<any> {
-    return this.request("get", "profile");
+  public dushboard(): Observable<any> {
+    return this.request("get", "dashboard");
   }
 }
 

@@ -10,19 +10,23 @@ import {LoginApi} from '../../services/login-api'
 export class DashboardComponent implements OnInit,OnDestroy {
 
   onSub:Subscription=null;
+  res={};
   constructor(private loginApi:LoginApi) {
 
     this.onSub=this.loginApi.readTokens().subscribe((data)=>{
       console.log('cookies',data)
+      this.res=data;
     })
 
-
    }
+
+
   ngOnDestroy(): void {
     this.onSub=null;
   }
 
   ngOnInit(): void {
+
   }
 
 }
