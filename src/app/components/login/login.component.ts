@@ -26,7 +26,14 @@ export class LoginComponent implements OnInit,OnDestroy {
       console.log("form:",form.value);
       this.onSub=this.loginApi.getLogin(form.value).subscribe((data)=>{
         console.log(data);
-   
+        if(data)
+        {
+        for (const key in data)
+             alert(data[key]);
+        }
+         this.router.navigate(['/customers']);
+
+
       })
 
       //this.router.navigate(['/customers']);

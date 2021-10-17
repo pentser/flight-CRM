@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import {LoginApi} from '../../services/login-api'
 
@@ -9,14 +9,16 @@ import {LoginApi} from '../../services/login-api'
 })
 export class DashboardComponent implements OnInit,OnDestroy {
 
+  @Output() user;
   onSub:Subscription=null;
-  res={};
+  isLogin=false;
   constructor(private loginApi:LoginApi) {
 
      this.onSub=this.loginApi.readCookie().subscribe((data)=>{
       console.log(data)
       console.log("cookie:",document.cookie)
-      this.res=data;
+      this.user=data;
+      this.isLogin=true;
     })
 
    }
