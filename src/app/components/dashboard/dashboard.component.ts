@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit,OnDestroy {
 
      this.onSub=this.loginApi.readCookie().subscribe((data)=>{
       console.log(data)
+      console.log("cookie:",document.cookie)
       this.res=data;
     })
 

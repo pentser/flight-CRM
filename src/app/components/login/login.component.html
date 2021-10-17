@@ -16,17 +16,17 @@
           <input
             #userF="ngModel"
             ngModel
-            name="user"
+            name="username"
             required
             [ngClass]="{ 'is-invalid': userF.errors && userF.touched }"
             type="text"
             placeholder="john doe"
-            id="user"
+            id="username"
             class="form-control"
             autocomplete="username"
           />
           <div
-            [hidden]="!(userF.errors?.required || userF.errors?.user)"
+            [hidden]="!(userF.errors?.required || userF.errors?.username)"
             class="invalid-feedback"
           >
             Valid user is required
