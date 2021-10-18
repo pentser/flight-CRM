@@ -9,16 +9,18 @@ import {LoginApi} from '../../services/login-api'
 })
 export class DashboardComponent implements OnInit,OnDestroy {
 
-  @Output() user;
+   user:any;
   onSub:Subscription=null;
   isLogin=false;
   constructor(private loginApi:LoginApi) {
 
      this.onSub=this.loginApi.readCookie().subscribe((data)=>{
+
       console.log(data)
-      console.log("cookie:",document.cookie)
-      this.user=data;
-      this.isLogin=true;
+      if(data['cookies']['jwt']){
+        this.user=data['cookies']['user'];
+        this.isLogin=true;
+       }
     })
 
    }
