@@ -19,6 +19,7 @@ import { TutHttpComponent } from './components/tut-http/tut-http.component';
 import { AirlinesComponent } from './components/airlines/airlines.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 
@@ -39,6 +40,7 @@ import { SignupComponent } from './components/signup/signup.component';
     AirlinesComponent,
     LoginComponent,
     SignupComponent,
+    SearchComponent,
 
 
   ],
