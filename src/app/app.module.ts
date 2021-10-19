@@ -20,6 +20,7 @@ import { AirlinesComponent } from './components/airlines/airlines.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SearchComponent } from './components/search/search.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 
@@ -41,6 +42,7 @@ import { SearchComponent } from './components/search/search.component';
     LoginComponent,
     SignupComponent,
     SearchComponent,
+    AboutComponent,
 
 
   ],

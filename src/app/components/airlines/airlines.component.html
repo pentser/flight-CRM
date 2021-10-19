@@ -1,7 +1,26 @@
 <div *ngIf="airlineApi.airlines| async as airlines">
   <pre>
-
     {{ airlines | json }}
-
   </pre>
+  <table class="table">
+    <thead>
+      <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Country Id</th>
+      <th scope="col">User Id</th>
+    </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let airline of airlines;inx as index" >
+      <tr>
+        <th scope="row">{{inx}}</th>
+        <td scope="row">{{airline.id}}</td>
+        <td scope="row">{{airline.country_id}}</td>
+        <td scope="row">{{airline.user_id}}</td>
+      </tr>
+      </ng-container>
+    </tbody>
+
+    </table>
 </div>

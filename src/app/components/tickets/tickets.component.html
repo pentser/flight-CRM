@@ -1,8 +1,30 @@
 
 <div *ngIf="ticketApi.tickets| async as tickets">
   <pre>
-
     {{ tickets | json }}
-
   </pre>
+
+  <table class="table">
+    <thead>
+      <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Flight Id</th>
+      <th scope="col">Customer Id</th>
+    </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let ticket of tickets;inx as index" >
+      <tr>
+        <th scope="row">{{inx}}</th>
+        <td scope="row">{{ticket.id}}</td>
+        <td scope="row">{{ticket.flight_id}}</td>
+        <td scope="row">{{ticket.customer_id}}</td>
+      </tr>
+      </ng-container>
+    </tbody>
+
+    </table>
+
+
 </div>

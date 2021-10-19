@@ -13,18 +13,20 @@ import { TutHttpComponent } from './components/tut-http/tut-http.component';
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 import { AirlinesComponent } from './components/airlines/airlines.component';
 import {SearchComponent} from './components/search/search.component';
+import {AboutComponent} from './components/about/about.component'
 import {UserGuard} from './guards/user.guard'
 
 
 const appRouter: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'customers', component:CustomersComponent  },
-  { path: 'flights', component:FlightsComponent,canActivate:[UserGuard]},
+  { path: 'flights', component:FlightsComponent},//,canActivate:[UserGuard]},
   { path: 'countries',component:CountriesComponent},
   { path: 'tickets', component:TicketsComponent},
   { path: 'airlines', component:AirlinesComponent},
   { path: 'messages', component:MessagesComponent},
   { path: 'posts',component:TutHttpComponent},
+  { path: 'about',component:AboutComponent},
   { path: 'search',component:SearchComponent},
   { path: '**', component: PageNotFoundComponent }
 

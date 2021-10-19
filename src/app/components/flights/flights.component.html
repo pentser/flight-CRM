@@ -1,8 +1,36 @@
 
-<div *ngIf="flightApi.flights| async as posts">
+<div *ngIf="flightApi.flights| async as flights">
   <pre>
-
-    {{ posts | json }}
-
+    {{ flights | json }}
   </pre>
+  <table class="table">
+    <thead>
+      <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Airline Id</th>
+      <th scope="col">Origin Country Id</th>
+      <th scope="col">Destination Country Id</th>
+      <th scope="col">Departure Time</th>
+      <th scope="col">Landing Time</th>
+      <th scope="col">Remaning Tickets</th>
+
+    </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let flight of flights;inx as index" >
+      <tr>
+        <th scope="row">{{inx}}</th>
+        <td scope="row">{{flight.id}}</td>
+        <td scope="row">{{flight.airline_id}}</td>
+        <td scope="row">{{flight.origin_country_id}}</td>
+        <td scope="row">{{flight.destination_country_id}}</td>
+        <td scope="row">{{flight.departure_time}}</td>
+        <td scope="row">{{flight.landing_time}}</td>
+        <td scope="row">{{flight.remaining_tickets}}</td>
+      </tr>
+      </ng-container>
+    </tbody>
+
+    </table>
 </div>
