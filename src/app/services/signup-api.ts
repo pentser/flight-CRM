@@ -8,6 +8,6 @@ export class SignupApi{
 
   constructor(private httpClient:HttpClient ) { }
   public signup(params) {
-    return this.httpClient.post('http://localhost:3000/signup',params);
+    return this.httpClient.post('https://localhost:3000/signup',params);
   }
 }

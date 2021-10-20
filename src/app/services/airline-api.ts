@@ -16,7 +16,7 @@ export interface Airline{
 export class AirlineApi {
 
   airlines:Observable<Airline[]>=null;
-  readonly url='http://localhost:3000/anonymous/api/get_all_airlines_join';
+  readonly url='https://localhost:3000/anonymous/api/get_all_airlines_join';
 
   constructor(private httpClient:HttpClient) {
     this.airlines=httpClient.get<Airline[]>(this.url)

@@ -14,14 +14,14 @@ export class LoginApi{
 
   constructor(private httpClient:HttpClient ) { }
   public getLogin(params) {
-    return this.httpClient.post('http://localhost:3000/login',params);
+    return this.httpClient.post('https://localhost:3000/login',params);
   }
 
  /*  public readheader() {
-    return this.httpClient.get('http://localhost:3000/read_header',this.httpOptions);
+    return this.httpClient.get('https://localhost:3000/read_header',this.httpOptions);
   } */
 
   public readCookie() {
-    return this.httpClient.get('http://localhost:3000/read-cookies');
+    return this.httpClient.get('https://localhost:3000/read-cookies');
   }
 }

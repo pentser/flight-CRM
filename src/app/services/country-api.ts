@@ -14,7 +14,7 @@ export interface Country{
 export class CountryApi {
 
   countries:Observable<Country[]>=null;
-  readonly url='http://localhost:3000/anonymous/api/get_all_countries';
+  readonly url='https://localhost:3000/anonymous/api/get_all_countries';
 
   constructor(private httpClient:HttpClient) {
     this.countries=httpClient.get<Country[]>(this.url)

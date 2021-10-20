@@ -20,7 +20,7 @@ export interface Customer{
 export class CustomerApi {
 
   customers:Observable<Customer[]>=null;
-  readonly url='http://localhost:3000/admin/api/get_all_customers';
+  readonly url='https://localhost:3000/admin/api/get_all_customers';
 
   constructor(private httpClient:HttpClient) {
     this.customers=httpClient.get<Customer[]>(this.url)
