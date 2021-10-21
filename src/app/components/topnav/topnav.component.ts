@@ -24,10 +24,11 @@ export class TopnavComponent implements OnInit,OnDestroy  {
   ngOnInit(): void {
 
     this.onSub=this.loginApi.readCookie().subscribe((data)=>{
-      if(data['cookies']['jwt']){
+       if(data['cookies']['jwt']){
        this.user=data['cookies']['user'];
        this.isLogin=true;
       }
+     
   });
 
   }

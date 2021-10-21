@@ -4,15 +4,15 @@
     <!--Card-Body-->
     <div class="card-body">
         <!--Card-Title-->
-        <p class="card-title text-center shadow mb-5 rounded">Travel Booking Form</p>
+        <p class="card-title text-center shadow m-5 rounded">Search your flight</p>
         <div class="icons text-center">
             <i class="fa fa-plane fa-2x" aria-hidden="true"></i>
             <i class="fa fa-taxi fa-2x" aria-hidden="true"></i>
             <i class="fa fa-train fa-2x" aria-hidden="true"></i> </div>
         <hr>
-        <p class="searchText"><strong>Search For Cheap Flights</strong></p>
+        <p class="searchText"><strong>Search For Flights</strong></p>
         <!--First Row-->
-        <div class="row mb-3 mt-3"> <label class="radiobtn"><input type="radio" name="gender" value="male">One Way</label> <label class="radiobtn"><input type="radio" name="gender" value="male">Round Trip</label> </div>
+        <div class="row mb-3 mt-3"> <label class="radiobtn"><input type="radio" name="gender" value="male"> One Way</label> <label class="radiobtn"><input type="radio" name="gender" value="male" checked> Round Trip</label> </div>
         <!--Second Row-->
         <div class="row">
             <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
@@ -30,8 +30,10 @@
         </div>
         <!--Third Row-->
         <div class="row">
-            <div class="col-sm-6"> <input placeholder="&#xf073; Departing" type="text" id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome"> </div>
-            <div class="col-sm-6"> <input placeholder="&#xf073; Arriving" type="text" id="date-picker-example" class="form-control datepicker" style="font-family:Arial, FontAwesome"> </div>
+            <div class="col-sm-6">
+              <label for="departing">Departing:</label> <input placeholder="&#xf073; Departing" type="date" id="departing" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome"> </div>
+            <div class="col-sm-6">
+              <label for="arriving">Arriving:</label> <input placeholder="&#xf073; Arriving" type="date" id="arriving" class="form-control datepicker" style="font-family:Arial, FontAwesome"> </div>
         </div>
         <!--Fourth Row-->
         <div class="row mt-4">
