@@ -2,24 +2,27 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-export interface Ticket{
-  id:string;
-  flight_id:string;
-  customer_id:string;
-
+export interface Message{
+  _id:string;
+  url:string;
+  last_name:string;
+  fnName:string;
+  params:[];
+  __v:number;
 }
+
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class TicketApi {
+export class MessagesApi {
 
-  tickets:Observable<Ticket[]>=null;
-  readonly url='https://localhost:3000/admin/api/get_all_tickets';
+  messages:Observable<Message[]>=null;
+  readonly url='https://localhost:3000/admin/api/get_all_trasactions';
 
   constructor(private httpClient:HttpClient) {
-    this.tickets=httpClient.get<Ticket[]>(this.url)
+    this.messages=httpClient.get<Message[]>(this.url)
   }
 /*
    getById(id: number) {
@@ -27,3 +30,4 @@ export class TicketApi {
   } */
 
 }
+

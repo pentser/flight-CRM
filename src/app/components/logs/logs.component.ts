@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MessagesApi} from '../../services/messages-api';
 
 @Component({
   selector: 'app-logs',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogsComponent implements OnInit {
 
-  constructor() { }
+  customer=null;
+  constructor(public messagesApi:MessagesApi) { }
+
+
+
 
   ngOnInit(): void {
   }

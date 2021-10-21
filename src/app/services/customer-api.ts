@@ -25,9 +25,6 @@ export class CustomerApi {
   constructor(private httpClient:HttpClient) {
     this.customers=httpClient.get<Customer[]>(this.url)
   }
-/*
-   getById(id: number) {
-    return this.httpClient.get<Flight>(this.url + '/' + id);
-  } */
+
 
 }

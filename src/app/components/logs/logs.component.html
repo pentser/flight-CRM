@@ -1,1 +1,5 @@
-<p>logs works!</p>
+<div *ngIf="messagesApi.messages| async as messages">
+  <pre>
+   {{ messages | json }}
+ </pre>
+ </div>

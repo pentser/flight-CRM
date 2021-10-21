@@ -9,6 +9,7 @@ import {FlightsComponent} from "./components/flights/flights.component";
 import {CountriesComponent} from "./components/countries/countries.component";
 import {TicketsComponent} from "./components/tickets/tickets.component";
 import { MessagesComponent } from "./components/messages/messages.component";
+import {LogsComponent} from "./components/logs/logs.component"
 import { TutHttpComponent } from './components/tut-http/tut-http.component';
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 import { AirlinesComponent } from './components/airlines/airlines.component';
@@ -24,7 +25,7 @@ const appRouter: Routes = [
   { path: 'countries',component:CountriesComponent},
   { path: 'tickets', component:TicketsComponent},
   { path: 'airlines', component:AirlinesComponent},
-  { path: 'messages', component:MessagesComponent},
+  { path: 'messages', component:LogsComponent},
   { path: 'posts',component:TutHttpComponent},
   { path: 'about',component:AboutComponent},
   { path: 'search',component:SearchComponent},
