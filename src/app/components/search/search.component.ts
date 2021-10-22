@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import {LoginApi} from '../../services/login-api';
+import {FlightApi} from '../../services/flight-api';
 
 @Component({
   selector: 'app-search',
@@ -10,26 +11,27 @@ import {LoginApi} from '../../services/login-api';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private loginApi:LoginApi,private router:Router) { }
+  constructor(private flightApi:FlightApi,private router:Router) { }
 
   onSub:Subscription=null;
   onSubmit(form) {
 
-
+     event.preventDefault();
     if(form.status=="VALID")
     {
       console.log("form:",form.value);
-      this.onSub=this.loginApi.getLogin(form.value).subscribe((data)=>{
-        console.log(data);
-        if(data)
+      //this.onSub=this.flightApi.subscribe((data)=>{
+       // console.log(data);
+        if(this.flightApi)
         {
         /* for (const key in data)
              alert(data[key]); */
-             console.log(data);
-            this.router.navigate(['/flights'])
+             console.log(this.flightApi);
+           // this.router.navigate(['../flights'])
         }
-
-      })
+        else{
+          console.log('hgtghg');
+        }
 
     }
 
