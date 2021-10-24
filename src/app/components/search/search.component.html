@@ -4,7 +4,7 @@
     <!--Card-Body-->
     <div class="card-body">
         <!--Card-Title-->
-        <p class="card-title text-center shadow m-5 rounded">Search your flight</p>
+        <p class="card-title text-center shadow m-5 rounded">Are you plan to fly?</p>
         <form
         #searchForm="ngForm"
         (ngSubmit)="onSubmit(searchForm)"
@@ -19,16 +19,21 @@
         <p class="searchText"><strong>Search For Flights</strong></p>
         <!--First Row-->
 
-        <div class="row mb-3 mt-3"> <label class="radiobtn"><input type="radio" name="gender" value="male"> One Way</label> <label class="radiobtn"><input type="radio" name="gender" value="male" checked> Round Trip</label> </div>
+        <div class="row mb-3 mt-3"> <label class="radiobtn"><input type=
+          "radio"  #oneWayF="ngModel"
+          ngModel name="trip" value="one way"> One Way</label> <label class="radiobtn"><input type="radio"  #roundTripF="ngModel"
+            ngModel name="trip" value="round trip" checked> Round Trip</label> </div>
         <!--Second Row-->
         <div class="row">
-            <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
+            <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select" name='from'  #fromF="ngModel"
+              ngModel>
                     <option value="" disabled="" selected="">From City/Airport</option>
                     <option value="1">New Delhi</option>
                     <option value="2">Mumbai</option>
                     <option value="3">Bangalore</option>
                 </select> </div>
-            <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
+            <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select" name="to"  #toF="ngModel"
+              ngModel>
                     <option value="" disabled="" selected="">To City/Airport</option>
                     <option value="1">New Delhi</option>
                     <option value="2">Mumbai</option>
@@ -38,19 +43,23 @@
         <!--Third Row-->
         <div class="row">
             <div class="col-sm-6">
-              <label for="departing">Departing:</label> <input placeholder="&#xf073; Departing" type="date" id="departing" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome"> </div>
+              <label for="departing">Departing:</label> <input placeholder="&#xf073; Departing"  #departingF="ngModel"
+              ngModel type="date" id="departing" name="departing" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome"> </div>
             <div class="col-sm-6">
-              <label for="arriving">Arriving:</label> <input placeholder="&#xf073; Arriving" type="date" id="arriving" class="form-control datepicker" style="font-family:Arial, FontAwesome"> </div>
+              <label for="arriving">Arriving:</label> <input placeholder="&#xf073; Arriving" type="date"  #arivingF="ngModel"
+              ngModel id="arriving" name="arriving" class="form-control datepicker" style="font-family:Arial, FontAwesome"> </div>
         </div>
         <!--Fourth Row-->
         <div class="row mt-4">
-            <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
+            <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select" name="departureTime" #departuretimeF="ngModel"
+              ngModel>
                     <option value="" disabled="" selected="">Anytime</option>
                     <option value="1">6:00 AM</option>
                     <option value="2">3:00 PM</option>
                     <option value="3">6:00 PM</option>
                 </select> </div>
-            <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
+            <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select" name='landingtime' #landingTimeF="ngModel"
+              ngModel >
                     <option value="" disabled="" selected="">Anytime</option>
                     <option value="1">6:00 AM</option>
                     <option value="2">3:00 PM</option>
@@ -77,7 +86,14 @@
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select> </div>
-        </div> <a routerLink="#" type="submit" class="btn btn-primary float-right mt-5">Find Flights</a>
+        </div>
+        <button
+        [disabled]="!searchForm.form.valid"
+        class="btn btn-lg btn-primary btn-block"
+        type="submit">
+        Search
+      </button>
+
       </form>
     </div>
 </div>

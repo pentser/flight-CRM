@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import {LoginApi} from '../../services/login-api';
-import {FlightApi} from '../../services/flight-api';
+import {SearchApi} from '../../services/search-api';
+
 
 @Component({
   selector: 'app-search',
@@ -11,7 +11,7 @@ import {FlightApi} from '../../services/flight-api';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private flightApi:FlightApi,private router:Router) { }
+  constructor(private searchApi:SearchApi,private router:Router) { }
 
   onSub:Subscription=null;
   onSubmit(form) {
@@ -19,18 +19,18 @@ export class SearchComponent implements OnInit {
      event.preventDefault();
     if(form.status=="VALID")
     {
-      console.log("form:",form.value);
+
       //this.onSub=this.flightApi.subscribe((data)=>{
        // console.log(data);
-        if(this.flightApi)
+        if(this.searchApi)
         {
         /* for (const key in data)
              alert(data[key]); */
-             console.log(this.flightApi);
+             console.log(form.value);
            // this.router.navigate(['../flights'])
         }
         else{
-          console.log('hgtghg');
+          console.log('no flights');
         }
 
     }
