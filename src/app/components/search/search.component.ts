@@ -27,7 +27,7 @@ export class SearchComponent implements OnInit {
         /* for (const key in data)
              alert(data[key]); */
              console.log(form.value);
-           // this.router.navigate(['../flights'])
+             this.router.navigate(['/flights'])
         }
         else{
           console.log('no flights');

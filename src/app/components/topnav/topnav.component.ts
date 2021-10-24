@@ -8,6 +8,8 @@ import { LoginApi } from 'src/app/services/login-api';
   styleUrls: ['./topnav.component.scss']
 })
 export class TopnavComponent implements OnInit,OnDestroy  {
+
+  
   user:object={
     username:'',
     email:'',
@@ -27,8 +29,9 @@ export class TopnavComponent implements OnInit,OnDestroy  {
        if(data['cookies']['jwt']){
        this.user=data['cookies']['user'];
        this.isLogin=true;
+
       }
-     
+
   });
 
   }
