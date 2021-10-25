@@ -24,4 +24,8 @@ export class LoginApi{
   public readCookie() {
     return this.httpClient.get('https://localhost:3000/read-cookies',{withCredentials: true});
   }
+
+  public logout() {
+    return this.httpClient.get('https://localhost:3000//logout',{withCredentials: true});
+  }
 }
