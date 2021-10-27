@@ -36,12 +36,7 @@ export class TopnavComponent implements OnInit,OnDestroy  {
 
   }
 
-  
-  logOut(): void {
-    this.loginApi.logout().subscribe((data)=>{
-      this.isLogin=false;
-    })
-  }
+
   ngOnDestroy(): void {
     this.onSub=null;
   }
