@@ -11,6 +11,7 @@
       <th scope="col">Id</th>
       <th scope="col">Flight Id</th>
       <th scope="col">Customer Id</th>
+      <th scope="col">Operations</th>
     </tr>
     </thead>
     <tbody>
@@ -20,6 +21,16 @@
         <td scope="row">{{ticket.id}}</td>
         <td scope="row">{{ticket.flight_id}}</td>
         <td scope="row">{{ticket.customer_id}}</td>
+        <td scope="row">
+          <a href="#" class='m-1'>
+            <i class="fas fa-edit"> </i>
+          </a>
+          <a href="#" class='m-1'>
+          <i class="fas fa-trash-alt"> </i>
+        </a>
+      <a href="#" class="m-1">
+        <i class="far fa-plus-square"> </i>
+      </a></td>
       </tr>
       </ng-container>
     </tbody>

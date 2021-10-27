@@ -28,6 +28,7 @@ logout() {
     this.onLogout=this.loginApi.logout().subscribe((data)=>{
      console.log(data);
      this.isLogin=false;
+
  })
 }
 
@@ -37,6 +38,7 @@ logout() {
        if(data['cookies']['jwt']){
        this.user=data['cookies']['user'];
        this.isLogin=true;
+
 
       }
 
