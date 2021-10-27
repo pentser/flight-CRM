@@ -5,7 +5,7 @@
      <h3 class='display-3'>Wellcome to flightCRM</h3>
   </div>
   <div class="row">
-<app-login *ngIf="!isLogin;else profile;"></app-login>
+<app-login *ngIf="isLogin;else profile;"></app-login>
 
 
   </div>
@@ -16,5 +16,5 @@
    </div>
 
 <ng-template #profile>
-  <p class="text-light">Wellcome: {{user.username}}</p>
+  <p class="text-light m-3">Wellcome: {{user.username}}</p>
 </ng-template>

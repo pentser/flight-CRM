@@ -28,8 +28,6 @@ export class LoginComponent implements OnInit,OnDestroy {
         console.log(data);
         if(data)
         {
-        /* for (const key in data)
-             alert(data[key]); */
              console.log(data);
             this.router.navigate(['/customers'])
         }

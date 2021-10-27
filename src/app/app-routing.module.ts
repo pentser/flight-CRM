@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
 import {LoginComponent} from "./components/login/login.component";
+import {SignupComponent} from './components/signup/signup.component';
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import {CustomersComponent} from "./components/customers/customers.component"
 import {FlightsComponent} from "./components/flights/flights.component";
@@ -29,6 +30,7 @@ const appRouter: Routes = [
   { path: 'posts',component:TutHttpComponent},
   { path: 'about',component:AboutComponent},
   { path: 'search',component:SearchComponent},
+  {path: 'signup',component:SignupComponent},
   { path: '**', component: PageNotFoundComponent }
 
 
