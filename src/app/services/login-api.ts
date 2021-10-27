@@ -26,6 +26,6 @@ export class LoginApi{
   }
 
   public logout() {
-    return this.httpClient.get('https://localhost:3000//logout',{withCredentials: true});
+    return this.httpClient.get('https://localhost:3000/logout',{withCredentials: true});
   }
 }

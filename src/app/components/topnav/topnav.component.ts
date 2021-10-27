@@ -20,9 +20,17 @@ export class TopnavComponent implements OnInit,OnDestroy  {
   onSub:Subscription=null;
 
   constructor(private loginApi:LoginApi) {
-
-
 }
+
+onLogout:Subscription=null;
+
+logout() {
+    alert('eli')
+    this.onLogout=this.loginApi.logout().subscribe((data)=>{
+     console.log(data);
+ })
+}
+
   ngOnInit(): void {
 
     this.onSub=this.loginApi.readCookie().subscribe((data)=>{
@@ -39,6 +47,7 @@ export class TopnavComponent implements OnInit,OnDestroy  {
 
   ngOnDestroy(): void {
     this.onSub=null;
+    this.onLogout=null;
   }
 }
 
