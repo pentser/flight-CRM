@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit,OnDestroy {
         this.user=data['cookies']['user'];
         this.isLogin=true;
        }
+
     })
 
    }

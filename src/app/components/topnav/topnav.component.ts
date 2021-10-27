@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoginApi } from 'src/app/services/login-api';
 
@@ -25,9 +25,9 @@ export class TopnavComponent implements OnInit,OnDestroy  {
 onLogout:Subscription=null;
 
 logout() {
-    alert('eli')
     this.onLogout=this.loginApi.logout().subscribe((data)=>{
      console.log(data);
+     this.isLogin=false;
  })
 }
 
