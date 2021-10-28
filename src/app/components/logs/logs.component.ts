@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import {MessagesApi} from '../../services/messages-api';
 
 @Component({
@@ -8,13 +9,24 @@ import {MessagesApi} from '../../services/messages-api';
 })
 export class LogsComponent implements OnInit {
 
-  customer=null;
+  log=null;
+  rule='';
   constructor(public messagesApi:MessagesApi) { }
 
 
 
 
+  onSub:Subscription=null;
   ngOnInit(): void {
+
+
+    this.onSub=this.messagesApi.readCookie().subscribe((data)=>{
+
+      if(data['cookies']['jwt']){
+        this.rule=data['cookies']['rule'];
+       }
+
+    })
   }
 
 }

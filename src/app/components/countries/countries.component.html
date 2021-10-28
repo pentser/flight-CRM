@@ -19,13 +19,13 @@
         <td scope="row">{{country.id}}</td>
         <td scope="row">{{country.name}}</td>
         <td scope="row">
-          <a href="#" class='m-1'>
+          <a [hidden]="rule!=='Admin'" href="#" class='m-1'>
             <i class="fas fa-edit"> </i>
           </a>
-          <a href="#" class='m-1'>
+          <a [hidden]="rule!=='Admin'" href="#" class='m-1'>
           <i class="fas fa-trash-alt"> </i>
         </a>
-      <a href="#" class="m-1">
+      <a [hidden]="rule!=='Admin'" href="#" class="m-1">
         <i class="far fa-plus-square"> </i>
       </a></td>
       </tr>

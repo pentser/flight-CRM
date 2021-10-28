@@ -1,5 +1,9 @@
-<div *ngIf="messagesApi.messages| async as messages">
+<div [hidden]="rule!=='Admin'" *ngIf="messagesApi.messages| async as messages">
   <pre>
    {{ messages | json }}
  </pre>
+ </div>
+
+ <div *ngIf="rule!='Admin'">
+   <p>Only Admin Rule can see this data</p>
  </div>

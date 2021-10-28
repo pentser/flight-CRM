@@ -25,15 +25,15 @@
         <td scope="row">{{airline.country}}</td>
         <td scope="row">{{airline.username}}</td>
         <td scope="row">
-          <a href="#" class='m-1'>
-            <i class="fas fa-edit"> </i>
+          <a [hidden]="rule!=='Admin'" href="#" class='m-1'>
+            <i  class="fas fa-edit"> </i>
           </a>
-          <a href="#" class='m-1'>
+          <a [hidden]="rule!=='Admin'"href="#" class='m-1'>
           <i class="fas fa-trash-alt"> </i>
         </a>
-      <a href="#" class="m-1">
-        <i class="far fa-plus-square"> </i>
-      </a></td>
+         <a [hidden]="rule!=='Admin'" href="#" class="m-1">
+         <i class="far fa-plus-square"> </i>
+        </a></td>
 
       </tr>
       </ng-container>
