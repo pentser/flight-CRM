@@ -26,12 +26,16 @@ export class SignupComponent implements OnInit,OnDestroy {
         if(data)
         {
              console.log(data);
-            this.router.navigate(['/customers'])
-           window.location.reload();
+             this.router.navigate(['/customers'])
+             window.location.replace('/customers');
         }
       })
 
 
+    }
+
+    else{
+      console.log('invalid data:',form);
     }
 
   }
