@@ -22,7 +22,7 @@ export class AirlinesComponent implements OnInit {
 
       console.log(data)
       if(data['cookies']['jwt']){
-        this.rule=data['cookies']['rule'];
+        this.rule=data['cookies']['user']['rule'];
        }
 
     })

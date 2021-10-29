@@ -22,10 +22,16 @@ export class SignupComponent implements OnInit,OnDestroy {
     {
       console.log("form:",form.value);
       this.onSub=this.signupApi.signup(form.value).subscribe((data)=>{
-        window.location.reload();
+
+        if(data)
+        {
+             console.log(data);
+            this.router.navigate(['/customers'])
+           window.location.reload();
+        }
       })
 
-      //this.router.navigate(['/customers']);
+
     }
 
   }

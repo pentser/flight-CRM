@@ -29,6 +29,8 @@ export class MessagesApi {
     return this.httpClient.get('https://localhost:3000/read-cookies',{withCredentials: true});
   }
 
+  
+
 
 }
 

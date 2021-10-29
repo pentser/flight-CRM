@@ -23,7 +23,7 @@ export class LogsComponent implements OnInit {
     this.onSub=this.messagesApi.readCookie().subscribe((data)=>{
 
       if(data['cookies']['jwt']){
-        this.rule=data['cookies']['rule'];
+        this.rule=data['cookies']['user']['rule'];
        }
 
     })

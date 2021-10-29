@@ -25,9 +25,9 @@ export class FlightApi {
   constructor(private httpClient:HttpClient) {
     this.flights=httpClient.get<Flight[]>(this.url)
   }
-/*
-   getById(id: number) {
-    return this.httpClient.get<Flight>(this.url + '/' + id);
-  } */
+
+  public readCookie() {
+    return this.httpClient.get('https://localhost:3000/read-cookies',{withCredentials: true});
+  }
 
 }

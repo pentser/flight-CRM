@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import {FlightApi} from '../../services/flight-api';
 
 @Component({
@@ -9,9 +10,19 @@ import {FlightApi} from '../../services/flight-api';
 export class FlightsComponent implements OnInit {
 
   flight=null;
+  rule="";
+  onSub:Subscription=null;
   constructor(public flightApi:FlightApi) { }
 
   ngOnInit(): void {
+    this.onSub=this.flightApi.readCookie().subscribe((data)=>{
+
+      console.log(data)
+      if(data['cookies']['jwt']){
+        this.rule=data['cookies']['user']['rule'];
+       }
+
+    })
   }
 
 }

@@ -26,5 +26,9 @@ export class CustomerApi {
     this.customers=httpClient.get<Customer[]>(this.url)
   }
 
+  public readCookie() {
+    return this.httpClient.get('https://localhost:3000/read-cookies',{withCredentials: true});
+  }
+
 
 }
