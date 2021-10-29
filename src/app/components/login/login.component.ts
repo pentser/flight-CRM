@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit,OnDestroy {
         {
              console.log(data);
             this.router.navigate(['/customers'])
+            window.location.reload();
         }
 
       })

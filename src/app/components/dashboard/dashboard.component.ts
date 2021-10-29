@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit,OnDestroy {
       if(data['cookies']['jwt']){
         this.user=data['cookies']['user'];
         this.isLogin=true;
+       
        }
 
     })

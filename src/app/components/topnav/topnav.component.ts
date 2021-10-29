@@ -28,16 +28,23 @@ logout() {
     this.onLogout=this.loginApi.logout().subscribe((data)=>{
      console.log(data);
      this.isLogin=false;
+     window.location.reload();
+
+
 
  })
 }
 
   ngOnInit(): void {
 
+
+
     this.onSub=this.loginApi.readCookie().subscribe((data)=>{
        if(data['cookies']['jwt']){
        this.user=data['cookies']['user'];
        this.isLogin=true;
+
+
 
 
       }
