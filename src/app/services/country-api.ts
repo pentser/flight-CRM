@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {CountryInterface} from '../interfaces/country.interface'
 
-export interface Country{
-  id:number;
-  name:string;
-}
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +11,11 @@ export interface Country{
 
 export class CountryApi {
 
-  countries:Observable<Country[]>=null;
+  countries:Observable<CountryInterface[]>=null;
   readonly url='https://localhost:3000/anonymous/api/get_all_countries';
 
   constructor(private httpClient:HttpClient) {
-    this.countries=httpClient.get<Country[]>(this.url)
+    this.countries=httpClient.get<CountryInterface[]>(this.url)
   }
 
   public readCookie() {
