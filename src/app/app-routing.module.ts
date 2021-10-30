@@ -18,10 +18,20 @@ import {SearchComponent} from './components/search/search.component';
 import {AboutComponent} from './components/about/about.component'
 import {UserGuard} from './guards/user.guard'
 
+import {DeleteCustomerComponent} from './components/customers/delete-customer/delete-customer.component';
+import {UpdateCustomerComponent} from './components/customers/update-customer/update-customer.component';
+import {InsertCustomerComponent} from './components/customers/insert-customer/insert-customer.component';
+
 
 const appRouter: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'customers', component:CustomersComponent  },
+  { path: 'customers', component:CustomersComponent,
+   children:[
+     {path:'update',component:UpdateCustomerComponent},
+     {path:'delete',component:DeleteCustomerComponent},
+     {path:'insert',component:InsertCustomerComponent},
+
+   ] },
   { path: 'flights', component:FlightsComponent},//,canActivate:[UserGuard]},
   { path: 'countries',component:CountriesComponent},
   { path: 'tickets', component:TicketsComponent},
