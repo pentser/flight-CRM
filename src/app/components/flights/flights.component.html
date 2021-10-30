@@ -30,13 +30,13 @@
         <td scope="row">{{flight.landing_time}}</td>
         <td scope="row">{{flight.remaining_tickets}}</td>
         <td scope="row">
-          <a href="#" class='m-1'>
+          <a routerLink="update" class='m-1'>
             <i [hidden]="rule!=='Airline'" class="fas fa-edit"> </i>
           </a>
-          <a  [hidden]="rule!=='Airline'"href="#" class='m-1'>
+          <a  [hidden]="rule!=='Airline'"routerLink="delete" class='m-1'>
           <i class="fas fa-trash-alt"> </i>
         </a>
-      <a href="#" class="m-1">
+      <a routerLink="insert" class="m-1">
         <i [hidden]="rule!=='Airline'"class="far fa-plus-square"> </i>
       </a></td>
       </tr>

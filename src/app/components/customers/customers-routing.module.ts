@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CustomersComponent} from '../customers/customers.component';
-import { DeleteComponent} from '../customers/delete/delete.component'
+import {CustomersComponent} from './customers.component';
+import { DeleteComponent} from './delete/delete.component'
 import { InsertComponent } from './insert/insert.component';
 import { UpdateComponent } from './update/update.component';
 

@@ -22,13 +22,13 @@
         <td scope="row">{{ticket.flight_id}}</td>
         <td scope="row">{{ticket.customer_id}}</td>
         <td scope="row">
-          <a [hidden]="rule!=='Customer'"href="#" class='m-1'>
+          <a [hidden]="rule!=='Customer'"routerLink="update" class='m-1'>
             <i class="fas fa-edit"> </i>
           </a>
-          <a [hidden]="rule!=='Customer'" href="#" class='m-1'>
+          <a [hidden]="rule!=='Customer'" routerLink="delete" class='m-1'>
           <i class="fas fa-trash-alt"> </i>
         </a>
-      <a  [hidden]="rule!=='Customer'" href="#" class="m-1">
+      <a  [hidden]="rule!=='Customer'" routerlink="insert" class="m-1">
         <i class="far fa-plus-square"> </i>
       </a></td>
       </tr>
