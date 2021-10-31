@@ -24,17 +24,16 @@ export class AdminApi {
 
   readonly urls=['https://localhost:3000/admin/api/get_all_tickets',
                  'https://localhost:3000/admin/api/get_all_users',
-                 'https://localhost:3000/admin/api/get_all_customer',
+                 'https://localhost:3000/admin/api/get_all_customers',
                  'https://localhost:3000/admin/api/get_user_by_id',
                  'https://localhost:3000/admin/api/get_admin_by_user',
                  'https://localhost:3000/admin/api/get_all_transactions',
                 ];
 
   constructor(private httpClient:HttpClient) {
-    this.tickets=this.getAllTickets();
+     /*  this.tickets=this.getAllTickets();
     this.users=this.getAllUsers();
-    this.customers=this.getAllCustomers();
-   
+    this.customers=this.getAllCustomers();  */
   }
 
   public getAllTickets() {

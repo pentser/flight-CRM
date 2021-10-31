@@ -22,4 +22,8 @@ export class CountryApi {
     return this.httpClient.get('https://localhost:3000/read-cookies',{withCredentials: true});
   }
 
+  public updateCountry(id,name) {
+    return this.httpClient.put(`https://localhost:3000/admin/api/update_country`,{id,name},{withCredentials: true});
+  }
+
 }
