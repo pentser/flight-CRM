@@ -14,22 +14,22 @@
       <div class="form-group mb-4">
         <div class="form-group">
           <input
-            #countryF="ngModel"
+            #idF="ngModel"
             ngModel
-            name="countryname"
+            name="id"
             required
-            [ngClass]="{ 'is-invalid': countryF.errors && countryF.touched }"
+            [ngClass]="{ 'is-invalid': idF.errors && idF.touched }"
             type="text"
-            placeholder={{country}}
+            placeholder={{id}}
             id="countryname"
             class="form-control"
             autocomplete="Country Name"
           />
           <div
-            [hidden]="!(countryF.errors?.required || countryF.errors?.username)"
+            [hidden]="!(idF.errors?.required || idF.errors?.username)"
             class="invalid-feedback"
           >
-            Valid Country is required
+            Valid id is required
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
 
  <ng-container  *ngIf="isDeleted"><p class='text-primary m-2'>your data is delete</p>
   <button class='btn btn-primary m-2' (click)="back()">Back</button></ng-container>
- <ng-container  *ngIf="!isDeleted && !country"><p class='text-danger m-2'>Your data is delete, try again letter.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
+ <ng-container  *ngIf="!isDeleted && !id"><p class='text-danger m-2'>Your data is delete, try again letter.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
  </ng-container>
 
 

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {CountryInterface} from '../interfaces/country.interface'
+import {Observable, of} from 'rxjs';
+import {CountryInterface} from '../interfaces/country.interface';
+import { catchError } from 'rxjs/operators'
 
 
 
@@ -10,6 +11,8 @@ import {CountryInterface} from '../interfaces/country.interface'
 })
 
 export class CountryApi {
+
+
 
   countries:Observable<CountryInterface[]>=null;
   readonly url='https://localhost:3000/anonymous/api/get_all_countries';
@@ -28,6 +31,7 @@ export class CountryApi {
 
   public deleteCountry(id) {
 
+
     const options = {
       headers: new HttpHeaders({
          'Content-Type': 'application/json',
@@ -39,7 +43,7 @@ export class CountryApi {
       },
    };
 
-    return this.httpClient.delete(`https://localhost:3000/admin/api/delete_country`,options);
+    return this.httpClient.delete(`https://localhost:3000/admin/api/delete_country`,options)
   }
 
 }

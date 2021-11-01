@@ -42,12 +42,15 @@ export class DeleteComponent implements OnInit,OnDestroy {
         console.log("form:",form.value);
 
         this.onSub=this.countryApi.deleteCountry(this.id).subscribe((data)=>{
+          console.log('gff',data)
           if(data) {
 
             console.log(data);
             this.isDeleted=true
 
           }
+        },(error)=> {
+          console.log(error);
         })
 
 
