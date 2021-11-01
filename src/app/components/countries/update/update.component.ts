@@ -59,7 +59,6 @@ export class UpdateComponent implements OnInit,OnDestroy {
 
     }
     back(){
-      alert('hi')
       this.router.navigate(['countries'])
     }
 

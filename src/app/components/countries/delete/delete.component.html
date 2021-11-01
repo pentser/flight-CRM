@@ -1,1 +1,75 @@
-<p>delete works!</p>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-4">
+    <form
+      #deleteCountryForm="ngForm"
+      (ngSubmit)="onSubmit(deleteCountryForm)"
+      novalidate
+      autocomplete="off"
+    >
+      <div class="text-center mb-4 text-light">
+        <p>Delete Country</p>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #countryF="ngModel"
+            ngModel
+            name="countryname"
+            required
+            [ngClass]="{ 'is-invalid': countryF.errors && countryF.touched }"
+            type="text"
+            placeholder={{country}}
+            id="countryname"
+            class="form-control"
+            autocomplete="Country Name"
+          />
+          <div
+            [hidden]="!(countryF.errors?.required || countryF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid Country is required
+          </div>
+        </div>
+      </div>
+
+
+
+      <button
+        [disabled]="!deleteCountryForm.form.valid"
+        class="btn btn-lg btn-primary btn-block"
+        type="submit"
+      >
+        Delete
+      </button>
+
+      <a class="m-5 text-seccess" routerLink="/countries">Cancel</a>
+    </form>
+    <hr />
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
+  </div>
+</div>
+
+
+ <ng-container  *ngIf="isDeleted"><p class='text-primary m-2'>your data is delete</p>
+  <button class='btn btn-primary m-2' (click)="back()">Back</button></ng-container>
+ <ng-container  *ngIf="!isDeleted && !country"><p class='text-danger m-2'>Your data is delete, try again letter.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
+ </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

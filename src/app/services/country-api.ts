@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {CountryInterface} from '../interfaces/country.interface'
 
@@ -24,6 +24,22 @@ export class CountryApi {
 
   public updateCountry(id,name) {
     return this.httpClient.put(`https://localhost:3000/admin/api/update_country`,{id,name},{withCredentials: true});
+  }
+
+  public deleteCountry(id) {
+
+    const options = {
+      headers: new HttpHeaders({
+         'Content-Type': 'application/json',
+         'Access-Control-Allow-Credentials': 'true'
+
+      }),
+      body: {
+         id
+      },
+   };
+
+    return this.httpClient.delete(`https://localhost:3000/admin/api/delete_country`,options);
   }
 
 }
