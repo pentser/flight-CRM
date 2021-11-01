@@ -54,7 +54,7 @@
 
  <ng-container  *ngIf="isDeleted"><p class='text-primary m-2'>your data is delete</p>
   <button class='btn btn-primary m-2' (click)="back()">Back</button></ng-container>
- <ng-container  *ngIf="!isDeleted && !id"><p class='text-danger m-2'>Your data is delete, try again letter.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
+ <ng-container  *ngIf="!isDeleted && errors.length"><p class='text-danger m-2'>Your data is delete, {{errors[0]}}.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
  </ng-container>
 
 

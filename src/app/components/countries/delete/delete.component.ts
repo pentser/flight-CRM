@@ -15,6 +15,7 @@ export class DeleteComponent implements OnInit,OnDestroy {
  id=null;
  country='';
  isDeleted=false;
+ errors:any[]=[];
 
 
   constructor(private countryApi:CountryApi,private route:ActivatedRoute,private router:Router) {
@@ -39,18 +40,17 @@ export class DeleteComponent implements OnInit,OnDestroy {
 
       if(form.status=="VALID")
       {
-        console.log("form:",form.value);
 
         this.onSub=this.countryApi.deleteCountry(this.id).subscribe((data)=>{
-          console.log('gff',data)
+
           if(data) {
 
-            console.log(data);
             this.isDeleted=true
 
           }
-        },(error)=> {
-          console.log(error);
+        },(e)=> {
+          console.log("error",e.error);
+          this.errors.push(e.error)
         })
 
 
