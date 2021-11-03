@@ -16,7 +16,11 @@ export class SearchApi{
 
 
   constructor(private httpClient:HttpClient ) {
-    this.flights=httpClient.get<FlightInterface[]>(this.url)
+   // this.flights=httpClient.get<FlightInterface[]>(this.url)
+  }
+
+  public getDepartureFlights(country_id) {
+    return this.httpClient.get(`https://localhost:3000/anonymous/api/get_departure_flights?id=${country_id}`,{withCredentials: true});
   }
 
 

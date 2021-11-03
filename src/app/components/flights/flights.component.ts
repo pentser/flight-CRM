@@ -9,12 +9,15 @@ import {FlightApi} from '../../services/flight-api';
 })
 export class FlightsComponent implements OnInit {
 
-  flight=null;
+  flights=null;
   rule="";
   onSub:Subscription=null;
-  constructor(public flightApi:FlightApi) { }
+  constructor(public flightApi:FlightApi) {
+
+   }
 
   ngOnInit(): void {
+
     this.onSub=this.flightApi.readCookie().subscribe((data)=>{
 
       console.log(data)

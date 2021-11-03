@@ -13,21 +13,31 @@ export class SearchComponent implements OnInit {
 
   constructor(private searchApi:SearchApi,private router:Router) { }
 
+  flights;
   onSub:Subscription=null;
   onSubmit(form) {
+
+    console.log(form.value)
 
      event.preventDefault();
     if(form.status=="VALID")
     {
 
-      //this.onSub=this.flightApi.subscribe((data)=>{
-       // console.log(data);
+      this.onSub=this.searchApi.getDepartureFlights(form.value.from).subscribe((data)=>{
+         this.flights=data;
+         console.log('data',data)
+      },(error=>{
+        console.log(error)
+
+      }), ()=>{
+           console.log('complated')
+      })
+
         if(this.searchApi)
         {
-        /* for (const key in data)
-             alert(data[key]); */
-             console.log(form.value);
-             this.router.navigate(['/flights'])
+
+           //  this.router.navigate(['/flights'])
+
         }
         else{
           console.log('no flights');

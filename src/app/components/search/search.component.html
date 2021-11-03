@@ -28,16 +28,15 @@
             <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select" name='from'  #fromF="ngModel"
               ngModel>
                     <option value="" disabled="" selected="">From City/Airport</option>
-                    <option value="1">New Delhi</option>
-                    <option value="2">Mumbai</option>
-                    <option value="3">Bangalore</option>
+                    <option value="1">ISRAEL</option>
+                    <option value="2">ITALY</option>
+
                 </select> </div>
             <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select" name="to"  #toF="ngModel"
               ngModel>
                     <option value="" disabled="" selected="">To City/Airport</option>
-                    <option value="1">New Delhi</option>
-                    <option value="2">Mumbai</option>
-                    <option value="3">Bangalore</option>
+                    <option value="2">ITALY</option>
+                    <option value="1">ISRAEL</option>
                 </select> </div>
         </div>
         <!--Third Row-->
@@ -97,4 +96,14 @@
       </form>
     </div>
 </div>
+
+<div *ngIf="flights;else nodata">
+  <pre>
+    {{ flights | json }}
+  </pre>
+</div>
+
+<ng-template #nodata>
+   <p>no data</p>
+</ng-template>
 
