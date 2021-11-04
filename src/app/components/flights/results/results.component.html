@@ -1,0 +1,47 @@
+<!--
+<div *ngIf="flights">
+
+  <table class="table">
+    <thead>
+      <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Airline Id</th>
+      <th scope="col">Origin Country Id</th>
+      <th scope="col">Destination Country Id</th>
+      <th scope="col">Departure Time</th>
+      <th scope="col">Landing Time</th>
+      <th scope="col">Remaning Tickets</th>
+      <th scope="col">Operations</th>
+
+    </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let flight of flights;inx as index" >
+      <tr>
+        <th scope="row">{{inx}}</th>
+        <td scope="row">{{flight.id}}</td>
+        <td scope="row">{{flight.airline_id}}</td>
+        <td scope="row">{{flight.origin_country_id}}</td>
+        <td scope="row">{{flight.destination_country_id}}</td>
+        <td scope="row">{{flight.departure_time}}</td>
+        <td scope="row">{{flight.landing_time}}</td>
+        <td scope="row">{{flight.remaining_tickets}}</td>
+        <td scope="row">
+          <a routerLink="update" class='m-1'>
+            <i [hidden]="rule!=='Airline'" class="fas fa-edit"> </i>
+          </a>
+          <a  [hidden]="rule!=='Airline'"routerLink="delete" class='m-1'>
+          <i class="fas fa-trash-alt"> </i>
+        </a>
+      <a routerLink="insert" class="m-1">
+        <i [hidden]="rule!=='Airline'"class="far fa-plus-square"> </i>
+      </a></td>
+      </tr>
+      </ng-container>
+    </tbody>
+
+    </table>
+</div>  -->
+
+<p>results pages</p>

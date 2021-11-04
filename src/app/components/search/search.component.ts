@@ -36,7 +36,7 @@ export class SearchComponent implements OnInit {
         if(this.searchApi)
         {
 
-           //  this.router.navigate(['/flights'])
+             this.router.navigate(['/flights/results'],this.flights)
 
         }
         else{
