@@ -11,7 +11,7 @@ import { CountryApi } from 'src/app/services/country-api';
 export class InsertComponent implements OnInit {
 
   id=null;
- country='';
+ country='Enter Country';
  isInsert=false;
 
  constructor(private countryApi:CountryApi,private route:ActivatedRoute,private router:Router) {
@@ -31,6 +31,7 @@ onSubmit(form) {
     console.log("form:",form.value);
 
     this.onSub=this.countryApi.insertCountry(form.value.countryname).subscribe((data)=>{
+      console.log('data',data)
       if(data) {
 
         console.log(data);
