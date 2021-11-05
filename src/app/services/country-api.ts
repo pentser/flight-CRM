@@ -46,4 +46,8 @@ export class CountryApi {
     return this.httpClient.delete(`https://localhost:3000/admin/api/delete_country`,options)
   }
 
+  public insertCountry(name) {
+    return this.httpClient.post(`https://localhost:3000/admin/api/insert_country`,{name},{withCredentials: true});
+  }
+
 }

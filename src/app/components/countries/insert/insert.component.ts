@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { CountryApi } from 'src/app/services/country-api';
 
 @Component({
   selector: 'app-insert',
@@ -7,9 +10,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsertComponent implements OnInit {
 
-  constructor() { }
+  id=null;
+ country='';
+ isInsert=false;
 
+ constructor(private countryApi:CountryApi,private route:ActivatedRoute,private router:Router) {
+ /*  this.id=Number(this.route.snapshot.queryParams['id']);
+  this.country=this.route.snapshot.queryParams['country']; */
+}
   ngOnInit(): void {
+
   }
+
+onSub:Subscription=null
+onSubmit(form) {
+
+
+  if(form.status=="VALID")
+  {
+    console.log("form:",form.value);
+
+    this.onSub=this.countryApi.insertCountry(form.value.countryname).subscribe((data)=>{
+      if(data) {
+
+        console.log(data);
+        this.isInsert=true
+
+      }
+    })
+
+
+  }
+
+  else{
+    console.log('invalid data:',form);
+  }
+
+}
+back(){
+  this.router.navigate(['countries'])
+}
+
+ngOnDestroy(): void {
+  this.onSub=null;
+}
 
 }

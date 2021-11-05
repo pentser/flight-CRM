@@ -25,7 +25,7 @@
           <a [hidden]="rule!=='Admin'" routerLink="delete" [queryParams]="{id:country.id}" class='m-1'>
           <i class="fas fa-trash-alt"> </i>
         </a>
-      <a [hidden]="rule!=='Admin'" routerLink="insert" class="m-1">
+      <a [hidden]="rule!=='Admin'" routerLink="insert"  [queryParams]="{id:country.id,country: country.name}" class="m-1">
         <i class="far fa-plus-square"> </i>
       </a></td>
       </tr>
