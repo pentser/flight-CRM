@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { browser } from 'protractor';
 import { Subscription } from 'rxjs';
 import {AirlineApi} from '../../services/airline-api';
 

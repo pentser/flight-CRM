@@ -30,8 +30,6 @@ export class DeleteComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
 
 
-
-
     };
 
     onSub:Subscription=null

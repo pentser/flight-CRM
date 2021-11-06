@@ -5,6 +5,7 @@ import { AirlinesRoutingModule } from './airlines-routing.module';
 import { DeleteComponent } from './delete/delete.component';
 import { InsertComponent } from './insert/insert.component';
 import { UpdateComponent } from './update/update.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { UpdateComponent } from './update/update.component';
   ],
   imports: [
     CommonModule,
-    AirlinesRoutingModule
+    AirlinesRoutingModule,
+    FormsModule
   ]
 })
 export class AirlinesModule { }
