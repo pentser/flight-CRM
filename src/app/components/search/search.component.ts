@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
 
   constructor(private searchApi:SearchApi,private router:Router) { }
 
-  flights;
+  flights:any
   onSub:Subscription=null;
   onSubmit(form) {
 
@@ -26,7 +26,7 @@ export class SearchComponent implements OnInit {
       this.onSub=this.searchApi.getDepartureFlights(form.value.from).subscribe((data)=>{
          this.flights=data;
          console.log('data',data)
-      },(error=>{
+          },(error=>{
         console.log(error)
 
       }), ()=>{
@@ -36,7 +36,7 @@ export class SearchComponent implements OnInit {
         if(this.searchApi)
         {
 
-             this.router.navigate(['/flights/results'],this.flights)
+           this.router.navigate(['/flights/results'],{state:{flights:this.flights}});
 
         }
         else{

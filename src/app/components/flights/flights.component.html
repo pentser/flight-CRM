@@ -38,7 +38,11 @@
         </a>
       <a routerLink="insert" class="m-1">
         <i [hidden]="rule!=='Airline'"class="far fa-plus-square"> </i>
-      </a></td>
+      </a>
+      <a routerLink="../tickets" class='m-1'>
+        <i [hidden]="rule!=='Customer'" class="fas fa-ticket-alt"> </i>
+      </a>
+    </td>
       </tr>
       </ng-container>
     </tbody>

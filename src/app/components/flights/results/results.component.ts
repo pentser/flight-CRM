@@ -11,7 +11,8 @@ export class ResultsComponent implements OnInit {
   flights:any=[];
 
   constructor(private router:Router) {
-    this.flights=this.router.getCurrentNavigation().extras;
+    this.flights=this.router.getCurrentNavigation().extras.state.flights;
+
   }
 
   ngOnInit(): void {
