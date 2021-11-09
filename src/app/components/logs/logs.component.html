@@ -1,7 +1,56 @@
 <div [hidden]="rule!=='Admin'" *ngIf="messagesApi.messages| async as messages">
-  <pre>
+ <!--  <pre>
    {{ messages | json }}
- </pre>
+ </pre> -->
+ <table class="table">
+  <thead>
+    <tr>
+    <th scope="col">#</th>
+    <th scope="col">Id</th>
+    <th scope="col">Url</th>
+    <th scope="col">Function Name</th>
+    <th scope="col">Parameters</th>
+    <th scope="col">Version</th>
+
+
+  <!--   "_id": "6149ce08ec41dba5b6298ec6",
+    "url": "/get_flight_by_id?id=1",
+    "fnName": "getFlightById",
+    "params": [
+      "1"
+    ],
+    "__v": 0 -->
+
+  </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let message of messages;inx as index" >
+    <tr>
+      <th scope="row">{{inx}}</th>
+      <td scope="row">{{message._id}}</td>
+      <td scope="row">{{message.url}}</td>
+      <td scope="row">{{message.fnName}}</td>
+      <td scope="row">{{message.params}}</td>
+      <td scope="row">{{message.__v}}</td>
+ <!--      <td scope="row">
+        <a routerLink="update" class='m-1'>
+          <i [hidden]="rule!=='Airline'" class="fas fa-edit"> </i>
+        </a>
+        <a  [hidden]="rule!=='Airline'"routerLink="delete" class='m-1'>
+        <i class="fas fa-trash-alt"> </i>
+      </a>
+    <a routerLink="insert" class="m-1">
+      <i [hidden]="rule!=='Airline'"class="far fa-plus-square"> </i>
+    </a>
+    <a routerLink="../tickets" class='m-1'>
+      <i [hidden]="rule!=='Customer'" class="fas fa-ticket-alt"> </i>
+    </a>
+  </td> -->
+    </tr>
+    </ng-container>
+  </tbody>
+
+  </table>
  </div>
 
  <div *ngIf="rule!='Admin'">
