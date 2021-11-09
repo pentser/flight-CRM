@@ -24,7 +24,7 @@
   </tr>
   </thead>
   <tbody>
-    <ng-container *ngFor="let message of messages;inx as index" >
+    <ng-container *ngFor="let message of messages| paginate: { itemsPerPage: 10, currentPage: p };inx as index" >
     <tr>
       <th scope="row">{{inx}}</th>
       <td scope="row">{{message._id}}</td>
@@ -51,6 +51,7 @@
   </tbody>
 
   </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
  </div>
 
  <div *ngIf="rule!='Admin'">
