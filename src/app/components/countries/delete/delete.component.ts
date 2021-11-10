@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CountryApi } from 'src/app/services/country-api';
 
 @Component({
-  selector: 'app-update',
+  selector: 'app-delete',
   templateUrl: './delete.component.html',
   styleUrls: ['./delete.component.scss']
 })
