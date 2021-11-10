@@ -25,7 +25,8 @@ export class SearchComponent implements OnInit {
 
       this.onSub=this.searchApi.getDepartureFlights(form.value.from).subscribe((data)=>{
          this.flights=data;
-         console.log('data',data)
+         this.router.navigate(['/flights/results'],{state:{flights:this.flights}});
+
           },(error=>{
         console.log(error)
 
@@ -33,15 +34,16 @@ export class SearchComponent implements OnInit {
            console.log('complated')
       })
 
-        if(this.searchApi)
+     /*    if(this.searchApi)
         {
 
-           this.router.navigate(['/flights/results'],{state:{flights:this.flights}});
+         //this.router.navigate(['/flights/results'],{state:{flights:this.flights}});
+
 
         }
         else{
           console.log('no flights');
-        }
+        } */
 
     }
 
