@@ -22,4 +22,6 @@ export class FlightApi {
     return this.httpClient.get('https://localhost:3000/read-cookies',{withCredentials: true});
   }
 
+  
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LoginApi } from 'src/app/services/login-api';
 
@@ -19,7 +20,7 @@ export class TopnavComponent implements OnInit,OnDestroy  {
   isLogin:boolean=false;
   onSub:Subscription=null;
 
-  constructor(private loginApi:LoginApi) {
+  constructor(private loginApi:LoginApi,private router:Router) {
 }
 
 onLogout:Subscription=null;
@@ -33,6 +34,16 @@ logout() {
 
 
  })
+}
+
+login() {
+
+  this.router.navigate(['/']);
+
+}
+
+titleTyped(e) {
+  console.log(e.target.value);
 }
 
   ngOnInit(): void {
