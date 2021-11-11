@@ -12,7 +12,7 @@ import {FlightInterface} from '../interfaces/flight.interface'
 export class FlightApi {
 
   flights:Observable<FlightInterface[]>=null;
-  readonly url='https://localhost:3000/anonymous/api/get_all_flights';
+  readonly url='https://localhost:3000/anonymous/api/get_all_flights_join';
 
   constructor(private httpClient:HttpClient) {
     this.flights=httpClient.get<FlightInterface[]>(this.url)
@@ -22,6 +22,6 @@ export class FlightApi {
     return this.httpClient.get('https://localhost:3000/read-cookies',{withCredentials: true});
   }
 
-  
+
 
 }
