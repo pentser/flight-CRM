@@ -39,7 +39,7 @@
       <a routerLink="insert" class="m-1">
         <i [hidden]="rule!=='Airline'"class="far fa-plus-square"> </i>
       </a>
-      <a [routerLink]="['../tickets/insert',flight]" class='m-1'>
+      <a [routerLink]="['../tickets'] [queryParams]=flight" class='m-1'>
         <i [hidden]="rule!=='Customer'" class="fas fa-ticket-alt"> </i>
       </a>
     </td>

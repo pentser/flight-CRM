@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CountryApi } from 'src/app/services/country-api';
+import { TicketApi } from 'src/app/services/ticket-api';
 
 @Component({
   selector: 'app-insert',
@@ -10,15 +10,24 @@ import { CountryApi } from 'src/app/services/country-api';
 })
 export class InsertComponent implements OnInit {
 
-  id=null;
- country='Enter Country';
+  flightId=0;
+  customerId=0;
  isInsert=false;
 
- constructor(private countryApi:CountryApi,private route:ActivatedRoute,private router:Router) {
- /*  this.id=Number(this.route.snapshot.queryParams['id']);
-  this.country=this.route.snapshot.queryParams['country']; */
+ constructor(private ticketApi:TicketApi,private route:ActivatedRoute,private router:Router) {
+   this.flightId=Number(this.route.snapshot.queryParams['id']);
+
+   console.log('data from constractor',this.flightId);
+
+
 }
   ngOnInit(): void {
+    this.ticketApi.readCookie().subscribe((data)=>{
+
+      console.log('data from ngOninit',data);
+
+
+    })
 
   }
 
@@ -30,7 +39,7 @@ onSubmit(form) {
   {
     console.log("form:",form.value);
 
-    this.onSub=this.countryApi.insertCountry(form.value.countryname).subscribe((data)=>{
+    this.onSub=this.ticketApi.insertTicket(form.value.flight_id,form.value.customer_id).subscribe((data)=>{
       console.log('data',data)
       if(data) {
 
@@ -49,7 +58,7 @@ onSubmit(form) {
 
 }
 back(){
-  this.router.navigate(['countries'])
+  this.router.navigate(['flights'])
 }
 
 ngOnDestroy(): void {

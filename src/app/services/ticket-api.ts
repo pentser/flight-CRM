@@ -27,8 +27,14 @@ export class TicketApi {
   }
 
   public updateTicket(id,flight_id,customer_id) {
-    return this.httpClient.put(`https://localhost:3000/admin/api/update_Ticket`,{id,flight_id,customer_id},{withCredentials: true});
+    return this.httpClient.put(`https://localhost:3000/customer/api/update_Ticket`,{id,flight_id,customer_id},{withCredentials: true});
   }
+
+  public insertTicket(flight_id,customer_id) {
+    return this.httpClient.put(`https://localhost:3000/customer/api/insert_Ticket`,{flight_id,customer_id},{withCredentials: true});
+  }
+
+
 
   public deleteTicket(id) {
 
@@ -47,8 +53,6 @@ export class TicketApi {
     return this.httpClient.delete(`https://localhost:3000/admin/api/delete_ticket`,options)
   }
 
-  public insertTicket(flight_id,customer_id) {
-    return this.httpClient.post(`https://localhost:3000/admin/api/insert_ticket`,{flight_id,customer_id},{withCredentials: true});
-  }
+
 
 }

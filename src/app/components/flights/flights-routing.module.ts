@@ -10,7 +10,7 @@ const routes: Routes = [
   {  path:'', component:FlightsComponent},
   { path: 'update', component:UpdateComponent },
   { path: 'delete', component:DeleteComponent },
-  { path: 'insert', component:InsertComponent },
+  { path: 'insert',component:InsertComponent },
   { path: 'results', component:ResultsComponent}
 
 ];

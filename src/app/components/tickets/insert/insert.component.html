@@ -2,34 +2,54 @@
   <div class="col-2"></div>
   <div class="col-4">
     <form
-      #insertCountryForm="ngForm"
-      (ngSubmit)="onSubmit(insertCountryForm)"
+      #insertTicketForm="ngForm"
+      (ngSubmit)="onSubmit(insertTicketForm)"
       novalidate
       autocomplete="off"
     >
       <div class="text-center mb-4 text-light">
-        <p>Insert Country</p>
+        <p>Insert Ticket</p>
       </div>
 
       <div class="form-group mb-4">
         <div class="form-group">
           <input
-            #countryF="ngModel"
+            #flightIdF="ngModel"
             ngModel
-            name="countryname"
+            name="flightId"
             required
-            [ngClass]="{ 'is-invalid': countryF.errors && countryF.touched }"
+            [ngClass]="{ 'is-invalid': flightIdF.errors && flightIdF.touched }"
             type="text"
-            placeholder={{country}}
-            id="countryname"
+            placeholder={{flightId}}
+            id="flightId"
             class="form-control"
             autocomplete="Country Name"
           />
           <div
-            [hidden]="!(countryF.errors?.required || countryF.errors?.username)"
+            [hidden]="!(flightIdF.errors?.required || flightIdF.errors?.username)"
             class="invalid-feedback"
           >
-            Valid Country is required
+            Valid flight id is required
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            #customerIdF="ngModel"
+            ngModel
+            name="customerId"
+            required
+            [ngClass]="{ 'is-invalid': customerIdF.errors && customerIdF.touched }"
+            type="text"
+            placeholder={{customerId}}
+            id="customerId"
+            class="form-control"
+            autocomplete="Customer id"
+          />
+          <div
+            [hidden]="!(customerIdF.errors?.required || customerIdF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid customer id is required
           </div>
         </div>
       </div>
@@ -37,7 +57,7 @@
 
 
       <button
-        [disabled]="!insertCountryForm.form.valid"
+        [disabled]="!insertTicketForm.form.valid"
         class="btn btn-lg btn-primary btn-block"
         type="submit"
       >
@@ -54,7 +74,7 @@
 
  <ng-container  *ngIf="isInsert"><p class='text-primary m-2'>your data is inserted</p>
   <button class='btn btn-primary m-2' (click)="back()">Back</button></ng-container>
- <ng-container  *ngIf="!isInsert && !country"><p class='text-danger m-2'>Your data is not insert, try again letter.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
+ <ng-container  *ngIf="!isInsert && !flightId" && !customerId><p class='text-danger m-2'>Your data is not insert, try again letter.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
  </ng-container>
 
 
