@@ -20,9 +20,9 @@ import {UserGuard} from './guards/user.guard'
 const appRouter: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'customers', loadChildren:()=>import('./components/customers/customers.module').then(m=>m.CustomersModule)},
-  { path: 'flights', loadChildren:()=>import('./components/flights/flights-routing.module').then(m=>m.FlightsRoutingModule)},//,canActivate:[UserGuard]},
+  { path: 'flights', loadChildren:()=>import('./components/flights/flights.module').then(m=>m.FlightsModule)},//,canActivate:[UserGuard]},
   { path: 'countries',loadChildren:()=>import('./components/countries/countries.module').then(m=>m.CountriesModule)},
-  { path: 'tickets', loadChildren:()=>import('./components/tickets/tickets-routing.module').then(m=>m.TicketsRoutingModule)},
+  { path: 'tickets', loadChildren:()=>import('./components/tickets/tickets.module').then(m=>m.TicketsModule)},
   { path: 'airlines', loadChildren:()=>import('./components/airlines/airlines.module').then(m=>m.AirlinesModule)},
   { path: 'messages', component:LogsComponent},
   { path: 'posts',component:TutHttpComponent},

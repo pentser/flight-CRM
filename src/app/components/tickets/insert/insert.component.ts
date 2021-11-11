@@ -6,7 +6,7 @@ import { CountryApi } from 'src/app/services/country-api';
 @Component({
   selector: 'app-insert',
   templateUrl: './insert.component.html',
-  styleUrls: ['./insert.component.scss']
+  styleUrls: ['./insert.component.scss'],
 })
 export class InsertComponent implements OnInit {
 

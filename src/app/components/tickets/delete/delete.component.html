@@ -1,4 +1,4 @@
-<!-- <div class="row">
+<div class="row">
   <div class="col-2"></div>
   <div class="col-4">
     <form
@@ -49,9 +49,9 @@
     <hr />
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
   </div>
-</div> -->
+</div>
 
-
+<p>delete works!</p>
  <ng-container  *ngIf="isDeleted"><p class='text-primary m-2'>your data is delete</p>
   <button class='btn btn-primary m-2' (click)="back()">Back</button></ng-container>
  <ng-container  *ngIf="!isDeleted && errors.length"><p class='text-danger m-2'>Your data is delete, {{errors[0]}}.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>

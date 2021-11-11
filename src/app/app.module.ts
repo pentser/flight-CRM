@@ -59,6 +59,7 @@ import {ResultsComponent} from './components/flights/results/results.component'
     NgxPaginationModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
