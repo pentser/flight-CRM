@@ -16,7 +16,7 @@ export interface Ticket{
 export class TicketApi {
 
   tickets:Observable<Ticket[]>=null;
-  readonly url='https://localhost:3000/admin/api/get_all_tickets';
+  readonly url='https://localhost:3000/admin/api/get_all_tickets_join';
 
   constructor(private httpClient:HttpClient) {
     this.tickets=httpClient.get<Ticket[]>(this.url)

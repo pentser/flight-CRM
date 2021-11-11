@@ -8,9 +8,13 @@
     <thead>
       <tr>
       <th scope="col">#</th>
-      <th scope="col">Id</th>
-      <th scope="col">Flight Id</th>
-      <th scope="col">Customer Id</th>
+      <th scope="col">Ticket Id</th>
+      <th scope="col">AirLine Name</th>
+      <th scope="col">customer First Name</th>
+      <th scope="col">Customer Last Name</th>
+      <th scope="col">Departure Time</th>
+      <th scope="col">Landing Time</th>
+      <th scope="col">Origin Country</th>
       <th scope="col">Operations</th>
     </tr>
     </thead>
@@ -19,8 +23,13 @@
       <tr>
         <th scope="row">{{inx}}</th>
         <td scope="row">{{ticket.id}}</td>
-        <td scope="row">{{ticket.flight_id}}</td>
-        <td scope="row">{{ticket.customer_id}}</td>
+        <td scope="row">{{ticket.name}}</td>
+        <td scope="row">{{ticket.first_name}}</td>
+        <td scope="row">{{ticket.last_name}}</td>
+        <td scope="row">{{ticket.departure_time}}</td>
+        <td scope="row">{{ticket.landing_time}}</td>
+        <td scope="row">{{ticket.origin}}</td>
+
         <td scope="row">
           <a [hidden]="rule!=='Customer'"routerLink="update" class='m-1'>
             <i class="fas fa-edit"> </i>
