@@ -2,7 +2,7 @@
 
 <div class="container-floud home-image">
   <div class="row home-text">
-     <h3 class='display-3'>Wellcome to flightCRM</h3>
+     <h3 class='display-3 m-4'>Wellcome to flightCRM</h3>
   </div>
   <div class="row">
 <app-login *ngIf="!isLogin;else profile;"></app-login>
@@ -10,10 +10,40 @@
 
   </div>
 </div>
-<div class="row">
-  <div class="col-lg-12  m-1">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13520.499980801453!2d34.80721575000001!3d32.0929073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1siw!2sil!4v1634629393453!5m2!1siw!2sil" width="100%" height="430" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-   </div>
+<div class="row m-2">
+  <div class="card flex m-2" style="width: 18rem;">
+    <img src="https://images.unsplash.com/photo-1592985684811-6c0f98adb014?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGZsaWdodHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="pic1">
+    <div class="card-body">
+      <h5 class="card-title">flights</h5>
+      <p class="card-text">Get the flight list.</p>
+      <a routerLink='/flights' class="btn btn-primary">Go to   <i class="fas fa-plane-departure"></i></a>
+    </div>
+  </div>
+  <div class="card flex m-2" style="width: 18rem;">
+    <img src="https://media.istockphoto.com/photos/happy-to-travel-again-picture-id1305828428?b=1&k=20&m=1305828428&s=170667a&w=0&h=5SAGDam9ySPJRYW4BGoh9EkGboiQ76dLDGluh63hJhw=" class="card-img-top" alt="pic2">
+    <div class="card-body">
+      <h5 class="card-title">Customers</h5>
+      <p class="card-text">Get the Customers list</p>
+      <a routerLink='/customers' class="btn btn-primary">Go to <i class="fas fa-user"></i></a>
+    </div>
+  </div>
+  <div class="card flex m-2" style="width: 18rem;">
+    <img src="https://media.istockphoto.com/photos/passport-and-boarding-pass-design-picture-id172423294?b=1&k=20&m=172423294&s=170667a&w=0&h=3i5TA02JeawY-601ee29Eq0P1xYm37BMuQ4DaMbbg0c=" class="card-img-top" alt="pic3">
+    <div class="card-body">
+      <h5 class="card-title">Tickets</h5>
+      <p class="card-text">Get the Tickets list.</p>
+      <a routerLink='/tickets' class="btn btn-primary">Go to  <i class="fas fa-ticket-alt"></i></a>
+    </div>
+  </div>
+
+  <div class="card flex m-2" style="width: 18rem;">
+    <img src="https://images.unsplash.com/photo-1496644256288-2bb0a65f32f6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YWlybGluZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="pic3">
+    <div class="card-body">
+      <h5 class="card-title">Airlines</h5>
+      <p class="card-text">Get the Airlinse list.</p>
+      <a routerLink='/airlines' class="btn btn-primary">Go to <i class="fas fa-globe-europe"></i></a>
+    </div>
+  </div>
 
 <ng-template #profile>
   <p class="text-light m-3">Wellcome: {{user.username}}</p>
