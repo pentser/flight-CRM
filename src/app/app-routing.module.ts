@@ -25,7 +25,7 @@ const appRouter: Routes = [
   { path: 'tickets', loadChildren:()=>import('./components/tickets/tickets.module').then(m=>m.TicketsModule)},
   { path: 'airlines', loadChildren:()=>import('./components/airlines/airlines.module').then(m=>m.AirlinesModule)},
   { path: 'messages', component:LogsComponent},
-  { path: 'posts',component:TutHttpComponent},
+  { path: 'cars',component:TutHttpComponent},
   { path: 'about',component:AboutComponent},
   { path: 'search',component:SearchComponent},
   {path: 'signup',component:SignupComponent},

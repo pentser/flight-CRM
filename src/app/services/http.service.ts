@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-export interface Post{
-  userId:number;
-  id:number;
-  title:string;
-  body:string;
+export interface Car{
+  year: number;
+  id: number;
+  horsepower: number;
+  make: string;
+  model: string;
+  price: number;
+  img_url: string;
 }
 
 @Injectable({
@@ -15,15 +18,12 @@ export interface Post{
 
 export class HttpService {
 
-  posts:Observable<Post[]>=null;
-  readonly url='https://jsonplaceholder.typicode.com/posts';
+  cars:Observable<Car[]>=null;
+  readonly url='https://private-anon-890366a60b-carsapi1.apiary-mock.com/cars';
 
   constructor(private httpClient:HttpClient) {
-    this.posts=httpClient.get<Post[]>(this.url)
+    this.cars=httpClient.get<Car[]>(this.url)
   }
 
-  getById(id: number) {
-    return this.httpClient.get<Post>(this.url + '/' + id);
-  }
 
 }
