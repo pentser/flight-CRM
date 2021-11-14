@@ -33,13 +33,13 @@
         <td scope="row">{{ticket.origin}}</td>
 
         <td scope="row">
-          <a [hidden]="rule!=='Customer'"routerLink="update" class='m-1'>
+          <a [hidden]="rule!=='Customer'"routerLink="update" [queryParams]="{id:ticket.id}" class='m-1'>
             <i class="fas fa-edit"> </i>
           </a>
-          <a [hidden]="rule!=='Customer'" routerLink="delete" class='m-1'>
+          <a [hidden]="rule!=='Customer'" routerLink="delete" [queryParams]="{id:ticket.id}" class='m-1'>
           <i class="fas fa-trash-alt"> </i>
         </a>
-        <a [hidden]="rule!=='Customer'" routerLink="insert" class='m-1'>
+        <a [hidden]="rule!=='Customer'" routerLink="insert"  [queryParams]="{id:ticket.id}" class='m-1'>
           <i class="far fa-plus-square"> </i>
         </a>
       </td>

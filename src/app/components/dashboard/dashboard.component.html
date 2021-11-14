@@ -1,5 +1,4 @@
 
-
 <div class="container-floud home-image">
   <div class="row home-text">
      <h3 class='display-3 m-4'>Wellcome to flightCRM</h3>
@@ -46,5 +45,7 @@
   </div>
 
 <ng-template #profile>
-  <p class="text-light m-3">Wellcome: {{user.username}}</p>
+  <span class="text-light m-3">Wellcome: {{user.username}}</span>
+  <span  class="text-light m-3" *ngIf="user.rule==='Customer'">Please register as <a routerLink="customers/insert">Customer</a> </span>
+  <span  class="text-light m-3" *ngIf="user.rule==='Airline'">Please register as <a routerLink="airlines/insert">Airline</a> </span>
 </ng-template>

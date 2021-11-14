@@ -1,1 +1,175 @@
-<p>insert works!</p>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-4">
+    <form
+      #insertCustomerForm="ngForm"
+      (ngSubmit)="onSubmit(insertCustomerForm)"
+      novalidate
+      autocomplete="off"
+    >
+      <div class="text-center mb-4 text-light">
+        <p>Insert Customer</p>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #firstnameF="ngModel"
+            ngModel
+            name="firstname"
+            required
+            [ngClass]="{ 'is-invalid': firstnameF.errors && firstnameF.touched }"
+            type="text"
+            placeholder={{firstName}}
+            id="firstname"
+            class="form-control"
+            autocomplete="First Name"
+          />
+          <div
+            [hidden]="!(firstnameF.errors?.required || firstnameF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid First Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #lastnameF="ngModel"
+            ngModel
+            name="lastname"
+            required
+            [ngClass]="{ 'is-invalid': lastnameF.errors && lastnameF.touched }"
+            type="text"
+            placeholder={{lastName}}
+            id="lastname"
+            class="form-control"
+            autocomplete="Last Name"
+          />
+          <div
+            [hidden]="!(lastnameF.errors?.required || lastnameF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid Last Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #addressF="ngModel"
+            ngModel
+            name="address"
+            required
+            [ngClass]="{ 'is-invalid': addressF.errors && addressF.touched }"
+            type="text"
+            placeholder={{address}}
+            id="address"
+            class="form-control"
+            autocomplete="Address"
+          />
+          <div
+            [hidden]="!(addressF.errors?.required || addressF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid Address is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #phoneF="ngModel"
+            ngModel
+            name="phone"
+            required
+            [ngClass]="{ 'is-invalid': phoneF.errors && phoneF.touched }"
+            type="text"
+            placeholder={{phoneNumber}}
+            id="phone"
+            class="form-control"
+            autocomplete="Phone"
+          />
+          <div
+            [hidden]="!(phoneF.errors?.required || phoneF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid Phone Number is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #useridF="ngModel"
+            ngModel
+            name="userid"
+            required
+            [ngClass]="{ 'is-invalid': useridF.errors && useridF.touched }"
+            type="text"
+            placeholder={{userid}}
+            id="userid"
+            class="form-control"
+            autocomplete="User Id"
+          />
+          <div
+            [hidden]="!(useridF.errors?.required || useridF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid user Id required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #creditcardnoF="ngModel"
+            ngModel
+            name="creaditcardno"
+            required
+            [ngClass]="{ 'is-invalid': creditcardnoF.errors && creditcardnoF.touched }"
+            type="text"
+            placeholder={{craditCardNo}}
+            id="creaditcardno"
+            class="form-control"
+            autocomplete="Credit Card Number"
+          />
+          <div
+            [hidden]="!(creditcardnoF.errors?.required || creditcardnoF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid Credit Card No required
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <button
+        [disabled]="!insertCustomerForm.form.valid"
+        class="btn btn-lg btn-primary btn-block"
+        type="submit"
+      >
+        Insert
+      </button>
+
+      <a class="m-5 text-seccess" routerLink="/airlines">Cancel</a>
+    </form>
+    <hr />
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
+  </div>
+</div>
+
+
+ <ng-container  *ngIf="isInsert"><p class='text-primary m-2'>your data is inserted</p>
+  <button class='btn btn-primary m-2' (click)="back()">Back</button></ng-container>
+ <ng-container  *ngIf="!isInsert && !firstName"><p class='text-danger m-2'>Your data is not insert, try again letter.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
+ </ng-container>

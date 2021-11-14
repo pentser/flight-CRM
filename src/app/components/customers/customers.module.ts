@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 import { CustomersRoutingModule } from './customers-routing.module';
 import { UpdateComponent } from './update/update.component';
@@ -15,7 +16,8 @@ import { InsertComponent } from './insert/insert.component';
   ],
   imports: [
     CommonModule,
-    CustomersRoutingModule
+    CustomersRoutingModule,
+    FormsModule
   ]
 })
 export class CustomersModule { }

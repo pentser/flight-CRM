@@ -31,7 +31,7 @@ export class TicketApi {
   }
 
   public insertTicket(flight_id,customer_id) {
-    return this.httpClient.put(`https://localhost:3000/customer/api/insert_Ticket`,{flight_id,customer_id},{withCredentials: true});
+    return this.httpClient.post(`https://localhost:3000/customer/api/insert_Ticket`,{flight_id,customer_id},{withCredentials: true});
   }
 
 

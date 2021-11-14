@@ -58,7 +58,7 @@ onSubmit(form) {
 
 }
 back(){
-  this.router.navigate(['flights'])
+  this.router.navigate(['tickets'])
 }
 
 ngOnDestroy(): void {
