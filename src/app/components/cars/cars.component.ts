@@ -11,6 +11,7 @@ export class TutHttpComponent implements OnInit,OnDestroy {
 
 
   cars:Car[]=[];
+  p: number = 1;
   constructor(public httpService:HttpService) { }
 
 
@@ -19,6 +20,10 @@ export class TutHttpComponent implements OnInit,OnDestroy {
    this.carSub=this.httpService.getCars().subscribe(cars=>{
      this.cars=cars;
    })
+  }
+
+  addToFlight() {
+    //TBD add car to flight details
   }
 
   ngOnDestroy(): void {

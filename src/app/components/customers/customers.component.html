@@ -3,7 +3,9 @@
   <!--  <pre>
     {{ customers | json }}
   </pre> -->
-  <h1 class="display-2 text-center mb-3" >Customers</h1>
+  <h1 class="display-2 text-center mb-3" >Customers <a [hidden]="rule!=='Admin'" routerLink="insert" class="m-1">
+    <i class="far fa-plus-square"> </i>
+  </a></h1>
   <table class="table">
     <thead>
       <tr>
@@ -38,9 +40,9 @@
           <a [hidden]="rule!=='Admin'" routerLink="delete" class='m-1'>
           <i class="fas fa-trash-alt"> </i>
         </a>
-      <a [hidden]="rule!=='Admin'" routerLink="insert" class="m-1">
+      <!-- <a [hidden]="rule!=='Admin'" routerLink="insert" class="m-1">
         <i class="far fa-plus-square"> </i>
-      </a></td>
+      </a> --></td>
       </tr>
       </ng-container>
     </tbody>

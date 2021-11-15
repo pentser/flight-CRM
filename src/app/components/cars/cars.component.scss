@@ -22,6 +22,7 @@ img {
   height: 75%;
   border-radius: 80%;
   transition: width 3000ms;
+  padding: 5px;
 }
 
 img:hover{
@@ -42,6 +43,14 @@ div h5,p {
   font-size: 13px;
   margin:10px;
 
+}
+
+button{
+  outline: none;
+  user-select: none;
+  border: none;
+  background-color: orange;
+  color:white;
 }
 
 

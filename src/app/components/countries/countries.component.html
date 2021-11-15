@@ -3,7 +3,8 @@
   <!-- <pre>
     {{ countries | json }}
   </pre> -->
-  <h1 class="display-2 text-center mb-3" >Countries</h1>
+  <h1 class="display-2 text-center mb-3" >Countries <a [hidden]="rule!=='Admin'" routerLink="insert"> <i class="far fa-plus-square"> </i></a> </h1>
+
   <table class="table">
     <thead>
       <tr>
@@ -16,7 +17,7 @@
     <tbody>
       <ng-container *ngFor="let country of countries;inx as index" >
       <tr>
-        <th scope="row">{{inx}}</th>
+        <td scope="row">{{inx}}</td>
         <td scope="row">{{country.id}}</td>
         <td scope="row">{{country.name}}</td>
         <td scope="row">
@@ -26,14 +27,17 @@
           <a [hidden]="rule!=='Admin'" routerLink="delete" [queryParams]="{id:country.id}" class='m-1'>
           <i class="fas fa-trash-alt"> </i>
         </a>
-      <a [hidden]="rule!=='Admin'" routerLink="insert"  [queryParams]="{id:country.id,country: country.name}" class="m-1">
-        <i class="far fa-plus-square"> </i>
-      </a></td>
+       <!--  <a [hidden]="rule!=='Admin'" routerLink="insert"  [queryParams]="{id:country.id,country: country.name}" class="m-1">
+          <i class="far fa-plus-square"> </i>
+        </a> -->
+      </td>
       </tr>
       </ng-container>
     </tbody>
 
     </table>
 </div>
+
+
 
 
