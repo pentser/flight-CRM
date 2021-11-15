@@ -17,7 +17,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TicketsComponent } from './components/tickets/tickets.component';
 import { LogsComponent } from './components/logs/logs.component';
-import { TutHttpComponent } from './components/tut-http/tut-http.component';
+import { TutHttpComponent } from './components/cars/cars.component';
 import { AirlinesComponent } from './components/airlines/airlines.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';

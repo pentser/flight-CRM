@@ -1,0 +1,65 @@
+
+<!-- <div *ngIf="httpService.cars | async as cars">
+  <pre>
+
+    {{ cars | json }}
+
+  </pre>
+</div> -->
+
+
+
+<div class="cars-gallery">
+  <div class="cars-card" *ngFor="let car of cars">
+    <header>
+      <img *ngIf="car.img_url" [src]="car.img_url" [alt]="car.id">
+      <div>
+        <h4> Factory: {{ car.make }}</h4>
+        <h5> Model: {{ car.model }}</h5>
+      </div>
+    </header>
+    <p> Horse Power: {{ car.horsepower }}</p>
+   <!--  <ul>
+      <li *ngIf="student.codepen">
+        <a [href]="student.codepen" target="_blank">
+          <i class="fa fa-codepen"></i>
+        </a>
+      </li>
+      <li *ngIf="student.facebook">
+        <a [href]="student.facebook" target="_blank">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li *ngIf="student.linkedin">
+        <a [href]="student.linkedin" target="_blank">
+          <i class="fa fa-linkedin"></i>
+        </a>
+      </li>
+      <li *ngIf="student.github">
+        <a [href]="student.github" target="_blank">
+          <i class="fa fa-github"></i>
+        </a>
+      </li>
+    </ul> -->
+    <!-- <button (click)="removeThisStudent()">Remove</button> -->
+  </div>
+</div>
+
+
+
+
+
+<!--
+  /*
+"year": 2016,
+"id": 15,
+"horsepower": 252,
+"make": "audi",
+"model": "a6",
+"price": 52100,
+"img_url": "http://ts2.mm.bing.net/th?id=OIP.M87f9a7ad73341027ed0eb94569f2425eH0&pid=15.1"*/
+
+-->
+
+
+

@@ -7,7 +7,7 @@ import {SignupComponent} from './components/signup/signup.component';
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 
 import {LogsComponent} from "./components/logs/logs.component"
-import { TutHttpComponent } from './components/tut-http/tut-http.component';
+import { TutHttpComponent } from './components/cars/cars.component';
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 
 import {SearchComponent} from './components/search/search.component';
