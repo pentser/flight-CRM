@@ -58,9 +58,11 @@ export class FlightsComponent implements OnInit {
   }
 
   onISub:Subscription=null;
-  buyTicket(flight_id) {
-     this.onISub=this.ticketApi.insertTicket(flight_id,this.user_id).subscribe((data)=>{
+  buyTicket(flight_id,customer_id) {
+
+     this.onISub=this.ticketApi.insertTicket(flight_id,customer_id).subscribe((data)=>{
        console.log('data',data);
+       alert(data)
 
      })
 

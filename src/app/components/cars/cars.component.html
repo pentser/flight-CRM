@@ -18,7 +18,7 @@
         <h5> Model: {{ car.model }}</h5>
       </div>
     </header>
-    <p> Horse Power: {{ car.horsepower }} <button (click)="addToFlight()">Add to flight</button></p>
+    <p> Horse Power: {{ car.horsepower }} <button (click)="addToFlight(car)">Add to flight</button></p>
   </div>
 </div>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>

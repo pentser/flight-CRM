@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import {Car, HttpService} from '../../services/car-service';
+// styled alert
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cars',
@@ -22,8 +24,16 @@ export class TutHttpComponent implements OnInit,OnDestroy {
    })
   }
 
-  addToFlight() {
-    //TBD add car to flight details
+  async addToFlight(car) {
+
+    Swal.fire({
+      title: car.make,
+      text: 'Model: ' + car.model,
+      imageUrl: car.img_url,
+      imageWidth: '100%',
+      imageHeight: '100%',
+      imageAlt: car.make,
+    })
   }
 
   ngOnDestroy(): void {
