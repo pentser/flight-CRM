@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import {CountryApi} from '../../services/country-api';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-countries',
@@ -25,6 +26,30 @@ export class CountriesComponent implements OnInit {
        }
 
     })
+  }
+
+  getInfo():void {
+
+    let message=`## delete tables with this orders for cascade delete
+    - tickets
+    - flight
+    - airlines
+    - customers
+    - users
+    - countries
+
+    ## insert data with the inverse order for cascade insert
+    - countries
+    - users
+    - customers
+    - airlines
+    - flights
+    - tickets`;
+
+    Swal.fire(message);
+
+
+
   }
 
 }
