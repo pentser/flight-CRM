@@ -36,21 +36,15 @@ export class AirlinesComponent implements OnInit {
 
   getInfo():void {
 
-    let message=`## delete tables with this orders for cascade delete
-    - tickets
-    - flight
-    - airlines
-    - customers
-    - users
-    - countries
+    let message=`Airlines list:
+                 # As airline rule you can insert, update and delete
+                   your data. and watch other airlines company.
 
-    ## insert data with the inverse order for cascade insert
-    - countries
-    - users
-    - customers
-    - airlines
-    - flights
-    - tickets`;
+                 # Please contact to : info@flightcrm.com for any Questions.
+
+                 flightCRM team
+                 972-054-3678907.
+                 `;
 
     Swal.fire(message);
 

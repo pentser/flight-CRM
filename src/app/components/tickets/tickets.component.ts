@@ -28,22 +28,15 @@ export class TicketsComponent implements OnInit {
   }
 
   getInfo():void {
+ let message=`Tickets list:
+                 # As customer rule you can insert, update and delete
+                   your data. and watch other clients tickets.
 
-    let message=`## delete tables with this orders for cascade delete
-    - tickets
-    - flight
-    - airlines
-    - customers
-    - users
-    - countries
+                 # Please contact to : info@flightcrm.com for any Questions.
 
-    ## insert data with the inverse order for cascade insert
-    - countries
-    - users
-    - customers
-    - airlines
-    - flights
-    - tickets`;
+                 flightCRM team
+                 972-054-3678907.
+                 `;
 
     Swal.fire(message);
 

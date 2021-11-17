@@ -22,5 +22,11 @@ export class CustomerApi {
     return this.httpClient.get('https://localhost:3000/read-cookies',{withCredentials: true});
   }
 
+  public insertCustomer(first_name,last_name,address,phone_no,user_id,credit_card_no) {
+    return this.httpClient.post(`https://localhost:3000/customers/api/insert_customer`,{first_name,last_name,address,phone_no,user_id,credit_card_no},{withCredentials: true});
+  }
+
+
+
 
 }
