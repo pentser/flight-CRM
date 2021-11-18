@@ -14,6 +14,8 @@ export class FlightsComponent implements OnInit {
   flights=null;
   rule="";
   user_id="";
+  username="";
+  customer_id="";
   onSub:Subscription=null;
   constructor(public flightApi:FlightApi,private ticketApi:TicketApi) {
 
@@ -27,6 +29,7 @@ export class FlightsComponent implements OnInit {
       if(data['cookies']['jwt']){
         this.rule=data['cookies']['user']['rule'];
         this.user_id=data['cookies']['user']['id'];
+        this.username=data['cookies']['user']['username'];
        }
 
     })
@@ -38,7 +41,7 @@ export class FlightsComponent implements OnInit {
      let message=`Flights list:
                  # As Admin rule you can insert, update and delete
                    your data. and watch other flights company.
-                   
+
                  # As Customer rule you can buy tickets.
 
                  # Please contact to : info@flightcrm.com for any Questions.
@@ -54,11 +57,17 @@ export class FlightsComponent implements OnInit {
   }
 
   onISub:Subscription=null;
+  onCsub:Subscription=null;
   buyTicket(flight_id,customer_id) {
+
+    this.onCsub=this.ticketApi.getCustomerId(this.username).subscribe((data)=>{
+       customer_id=data['id'];
+    })
+
 
      this.onISub=this.ticketApi.insertTicket(flight_id,customer_id).subscribe((data)=>{
        console.log('data',data);
-       alert(data)
+
 
      })
 

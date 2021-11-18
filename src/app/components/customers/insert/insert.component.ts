@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AirlineApi } from 'src/app/services/airline-api';
+import { CustomerApi } from 'src/app/services/customer-api';
 
 @Component({
   selector: 'app-insert',
@@ -20,7 +20,7 @@ export class InsertComponent implements OnInit {
  craditCardNo='xxxx-xxxx-xxxx-xxxx';
  isInsert=false;
 
- constructor(private airlineApi:AirlineApi,private route:ActivatedRoute,private router:Router) {
+ constructor(private customerApi:CustomerApi,private route:ActivatedRoute,private router:Router) {
  /*  this.id=Number(this.route.snapshot.queryParams['id']);
   this.country=this.route.snapshot.queryParams['country']; */
 }
@@ -36,7 +36,7 @@ onSubmit(form) {
   {
     console.log("form:",form.value);
 
-    this.onSub=this.airlineApi.insertairline(form.value.airlinename).subscribe((data)=>{
+    this.onSub=this.customerApi.insertCustomer(form.value.firstname,form.value.lastname,form.value.address,form.value.phone,form.value.userid,form.value.creditcardno).subscribe((data)=>{
       console.log('data',data)
       if(data) {
 

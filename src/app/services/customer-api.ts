@@ -26,6 +26,11 @@ export class CustomerApi {
     return this.httpClient.post(`https://localhost:3000/customers/api/insert_customer`,{first_name,last_name,address,phone_no,user_id,credit_card_no},{withCredentials: true});
   }
 
+  public getCustomerByUser(user_name) {
+    return this.httpClient.post('https://localhost:3000/customers/api/get_customer_by_user',
+    {user_name},{withCredentials: true});
+  }
+
 
 
 
