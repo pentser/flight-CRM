@@ -18,6 +18,9 @@ export class FlightsComponent implements OnInit {
   customer_id="";
   onSub:Subscription=null;
   constructor(public flightApi:FlightApi,private ticketApi:TicketApi) {
+    this.onCsub=this.ticketApi.getCustomerId(this.username).subscribe((data)=>{
+      this.customer_id=data['id'];
+   })
 
    }
 
@@ -59,11 +62,6 @@ export class FlightsComponent implements OnInit {
   onISub:Subscription=null;
   onCsub:Subscription=null;
   buyTicket(flight_id,customer_id) {
-
-    this.onCsub=this.ticketApi.getCustomerId(this.username).subscribe((data)=>{
-       customer_id=data['id'];
-    })
-
 
      this.onISub=this.ticketApi.insertTicket(flight_id,customer_id).subscribe((data)=>{
        console.log('data',data);
