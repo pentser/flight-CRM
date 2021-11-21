@@ -1,28 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TicketApi } from 'src/app/services/ticket-api';
 import {FlightApi} from '../../services/flight-api';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flights',
   templateUrl: './flights.component.html',
   styleUrls: ['./flights.component.scss']
 })
-export class FlightsComponent implements OnInit {
+export class FlightsComponent implements OnInit, OnDestroy {
 
   flights=null;
   rule="";
   user_id="";
   username="";
   customer_id="";
+
+
   onSub:Subscription=null;
-  constructor(public flightApi:FlightApi,private ticketApi:TicketApi) {
-    this.onCsub=this.ticketApi.getCustomerId(this.username).subscribe((data)=>{
-      this.customer_id=data['id'];
-   })
+  constructor(public flightApi:FlightApi,private ticketApi:TicketApi,private router:Router) {
+
 
    }
+
+
+
 
   ngOnInit(): void {
 
@@ -61,14 +65,36 @@ export class FlightsComponent implements OnInit {
 
   onISub:Subscription=null;
   onCsub:Subscription=null;
-  buyTicket(flight_id,customer_id) {
+  async buyTicket(flight_id) {
 
-     this.onISub=this.ticketApi.insertTicket(flight_id,customer_id).subscribe((data)=>{
-       console.log('data',data);
+    this.onCsub=await this.ticketApi.getCustomerId(this.username).subscribe(async (data)=>{
+      this.customer_id=data['id'];
+      this.onISub=await this.ticketApi.insertTicket(flight_id,Number(this.customer_id)).subscribe((data)=>{
+
+        if(data)
+        {
+          let message=`Dear ${this.username}
+          you buy ticket id: ${data}.`
+          Swal.fire(message);
+          this.router.navigate(['tickets'])
+        }
 
 
-     })
 
+
+      })
+
+
+
+   })
+
+
+
+  }
+
+  ngOnDestroy(): void {
+   this.onCsub=null;
+   this.onCsub=null;
   }
 
 }
