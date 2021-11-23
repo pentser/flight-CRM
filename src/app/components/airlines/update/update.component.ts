@@ -14,19 +14,16 @@ export class UpdateComponent implements OnInit,OnDestroy {
 
  id=null;
  airline='';
- countryid=''
- userid=''
+ countryid='';
+ userid='';
  isUpdate=false;
 
 
   constructor(private airlineApi:AirlineApi,private route:ActivatedRoute,private router:Router) {
     this.id=Number(this.route.snapshot.queryParams['id']);
-    this.airline=this.route.snapshot.queryParams['airline'];
+    this.airline=this.route.snapshot.queryParams['airlinename'];
     this.countryid=this.route.snapshot.queryParams['countruyid'];
     this.userid=this.route.snapshot.queryParams['userid'];
-
-
-
   }
 
 

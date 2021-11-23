@@ -21,9 +21,9 @@
             [ngClass]="{ 'is-invalid': idF.errors && idF.touched }"
             type="text"
             placeholder={{id}}
-            id="countryname"
+            id="id"
             class="form-control"
-            autocomplete="Country Name"
+            autocomplete="Country Id"
           />
           <div
             [hidden]="!(idF.errors?.required || idF.errors?.username)"

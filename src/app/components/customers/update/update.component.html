@@ -21,9 +21,9 @@
             [ngClass]="{ 'is-invalid': firstnameF.errors && firstnameF.touched }"
             type="text"
             placeholder={{firstname}}
-            id="countryname"
+            id="firstname"
             class="form-control"
-            autocomplete="Country Name"
+            autocomplete="First Name"
           />
           <div
             [hidden]="!(firstnameF.errors?.required || firstnameF.errors?.username)"
@@ -33,6 +33,122 @@
           </div>
         </div>
       </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #lastnameF="ngModel"
+            ngModel
+            name="lastname"
+            required
+            [ngClass]="{ 'is-invalid': lastnameF.errors && lastnameF.touched }"
+            type="text"
+            placeholder={{lastname}}
+            id="lastname"
+            class="form-control"
+            autocomplete="Last Name"
+          />
+          <div
+            [hidden]="!(lastnameF.errors?.required || lastnameF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid Last Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #addressF="ngModel"
+            ngModel
+            name="address"
+            required
+            [ngClass]="{ 'is-invalid': addressF.errors && addressF.touched }"
+            type="text"
+            placeholder={{address}}
+            id="address"
+            class="form-control"
+            autocomplete="Address"
+          />
+          <div
+            [hidden]="!(addressF.errors?.required || addressF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid Address is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #phonenoF="ngModel"
+            ngModel
+            name="phoneno"
+            required
+            [ngClass]="{ 'is-invalid': phonenoF.errors && phonenoF.touched }"
+            type="text"
+            placeholder={{phoneno}}
+            id="phoneno"
+            class="form-control"
+            autocomplete="Phone Number"
+          />
+          <div
+            [hidden]="!(phonenoF.errors?.required || phonenoF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid Phone Number is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #useridF="ngModel"
+            ngModel
+            name="userid"
+            required
+            [ngClass]="{ 'is-invalid': useridF.errors && useridF.touched }"
+            type="text"
+            placeholder={{userid}}
+            id="userid"
+            class="form-control"
+            autocomplete="User Id"
+          />
+          <div
+            [hidden]="!(useridF.errors?.required || useridF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid User Id is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #creditcardnoF="ngModel"
+            ngModel
+            name="creditcardno"
+            required
+            [ngClass]="{ 'is-invalid': creditcardnoF.errors && creditcardnoF.touched }"
+            type="text"
+            placeholder={{creditcardno}}
+            id="creditcardno"
+            class="form-control"
+            autocomplete="Credit Card Number"
+          />
+          <div
+            [hidden]="!(creditcardnoF.errors?.required || creditcardnoF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid Credit Card Number is required
+          </div>
+        </div>
+      </div>
+
 
 
 

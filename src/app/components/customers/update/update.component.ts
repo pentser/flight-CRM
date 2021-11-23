@@ -14,12 +14,23 @@ export class UpdateComponent implements OnInit,OnDestroy {
 
  id=null;
  firstname='';
+ lastname='';
+ address='';
+ phoneno='';
+ userid='';
+ creditcardno='';
+
  isUpdate=false;
 
 
   constructor(private customerApi:CustomerApi,private route:ActivatedRoute,private router:Router) {
     this.id=Number(this.route.snapshot.queryParams['id']);
     this.firstname=this.route.snapshot.queryParams['firstname'];
+    this.lastname=this.route.snapshot.queryParams['lastname'];
+    this.address=this.route.snapshot.queryParams['address'];
+    this.phoneno=this.route.snapshot.queryParams['phoneno'];
+    this.userid=this.route.snapshot.queryParams['userid'];
+    this.creditcardno=this.route.snapshot.queryParams['creditcardno'];
 
 
 
