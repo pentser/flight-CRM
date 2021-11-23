@@ -1,1 +1,75 @@
-<p>update works!</p>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-4">
+    <form
+      #updateCustomerForm="ngForm"
+      (ngSubmit)="onSubmit(updateCustomerForm)"
+      novalidate
+      autocomplete="off"
+    >
+      <div class="text-center mb-4 text-light">
+        <p>Update Customer</p>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="form-group">
+          <input
+            #firstnameF="ngModel"
+            ngModel
+            name="firstname"
+            required
+            [ngClass]="{ 'is-invalid': firstnameF.errors && firstnameF.touched }"
+            type="text"
+            placeholder={{firstname}}
+            id="countryname"
+            class="form-control"
+            autocomplete="Country Name"
+          />
+          <div
+            [hidden]="!(firstnameF.errors?.required || firstnameF.errors?.username)"
+            class="invalid-feedback"
+          >
+            Valid First Name is required
+          </div>
+        </div>
+      </div>
+
+
+
+      <button
+        [disabled]="!updateCustomerForm.form.valid"
+        class="btn btn-lg btn-primary btn-block"
+        type="submit"
+      >
+        Update
+      </button>
+
+      <a class="m-5 text-seccess" routerLink="/customers">Cancel</a>
+    </form>
+    <hr />
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2020-2021</p>
+  </div>
+</div>
+
+
+ <ng-container  *ngIf="isUpdate"><p class='text-primary m-2'>your data is update</p>
+  <button class='btn btn-primary m-2' (click)="back()">Back</button></ng-container>
+ <ng-container  *ngIf="!isUpdate && !firstname"><p class='text-danger m-2'>Your data is not update, try again letter.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
+ </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
