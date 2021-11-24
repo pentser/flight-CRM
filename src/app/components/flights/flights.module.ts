@@ -9,6 +9,7 @@ import { FlightsRoutingModule } from './flights-routing.module';
 import { UpdateComponent } from './update/update.component';
 import { InsertComponent } from './insert/insert.component';
 import { DeleteComponent } from './delete/delete.component';
+import { MapComponent } from './map/map.component';
 //import { ResultsComponent } from './results/results.component';
 
 
@@ -18,6 +19,7 @@ import { DeleteComponent } from './delete/delete.component';
     UpdateComponent,
     InsertComponent,
     DeleteComponent,
+    MapComponent,
    // ResultsComponent
   ],
   imports: [
