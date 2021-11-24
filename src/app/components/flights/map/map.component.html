@@ -1,1 +1,17 @@
 <p>map works!</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet nemo at est laborum consequuntur accusantium! Aut ducimus facilis quos expedita error, ratione hic? Reprehenderit nobis ut commodi blanditiis rerum.</p>
+<agm-map
+[latitude]="lat"
+[longitude]="lng"
+[zoom]="zoom"
+[disableDefaultUI]="false"
+(mapClick)="mapClicked($event)"
+>
+
+<agm-direction
+[origin]="origin"
+[destination]="destination"
+>
+</agm-direction>
+</agm-map>
+

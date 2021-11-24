@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {AgmCoreModule} from '@agm/core'
+import { AgmDirectionModule} from 'agm-direction'
+
 
 
 
@@ -25,7 +28,13 @@ import { MapComponent } from './map/map.component';
   imports: [
 
     FlightsRoutingModule,
-    CommonModule
+    CommonModule,
+    AgmCoreModule.forRoot({
+      apiKey:"AIzaSyCCQ7lj8cW6BJow7jW9YriTBr4bpVAUIxQ",
+      language:'he',
+      libraries:['places','geometry']
+    }),
+    AgmDirectionModule
 
 
 
