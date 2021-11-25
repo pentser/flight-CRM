@@ -62,7 +62,7 @@ export class MapComponent implements OnInit {
     this.id=this.route.snapshot.queryParams['id'];
     this.origincountry=this.route.snapshot.queryParams['origincountry'];
     this.destinationcountry=this.route.snapshot.queryParams['destinationcountry'];
-    this. departuretime=this.route.snapshot.queryParams['departuretime'];
+    this.departuretime=this.route.snapshot.queryParams['departuretime'];
     this.landingtime=this.route.snapshot.queryParams['landingtime'];
     this.remainingtickets=this.route.snapshot.queryParams['remainingtickets'];
   }
@@ -75,7 +75,7 @@ export class MapComponent implements OnInit {
       draggable: true
     });
   }
- 
+
   getDirection() {
     // this.origin = { lat: 32.0753325, lng: 34.8264765 };
     // this.destination = { lat: 32.0762555, lng: 34.9188889 };
