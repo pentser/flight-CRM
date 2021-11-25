@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-map',
@@ -6,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
+
+   //props from father
+   id='';
+   airlinename='';
+   origincountry='';
+   destinationcountry='';
+   departuretime='';
+   landingtime='';
+   remainingtickets='';
+
+
 
     // google map derection
     public origin: any;
@@ -40,30 +52,39 @@ export class MapComponent implements OnInit {
     ]
 
 
-  constructor() { }
+  constructor(private route:ActivatedRoute) {
+
+  }
 
   ngOnInit(): void {
 
     this.getDirection();
+    this.id=this.route.snapshot.queryParams['id'];
+    this.origincountry=this.route.snapshot.queryParams['origincountry'];
+    this.destinationcountry=this.route.snapshot.queryParams['destinationcountry'];
+    this. departuretime=this.route.snapshot.queryParams['departuretime'];
+    this.landingtime=this.route.snapshot.queryParams['landingtime'];
+    this.remainingtickets=this.route.snapshot.queryParams['remainingtickets'];
   }
 
-  mapClicked($event: google.maps.MouseEvent): void {
+
+   mapClicked($event: google.maps.MouseEvent): void {
     this.markers.push({
       lat: $event.latLng.lat(),
       lng: $event.latLng.lng(),
       draggable: true
     });
   }
-
+ 
   getDirection() {
     // this.origin = { lat: 32.0753325, lng: 34.8264765 };
     // this.destination = { lat: 32.0762555, lng: 34.9188889 };
 
      // Location within a string
-      this.origin = 'Israel';
-      this.destination = 'Italy';
-   }
+      this.origin = this.origincountry;
+      this.destination=this.destinationcountry
 
+}
 }
 
 interface marker {

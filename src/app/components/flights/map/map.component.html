@@ -1,6 +1,8 @@
-<p>map works!</p>
+<p>id: {{id}}</p>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet nemo at est laborum consequuntur accusantium! Aut ducimus facilis quos expedita error, ratione hic? Reprehenderit nobis ut commodi blanditiis rerum.</p>
-<agm-map
+<h2 class="display-3">{{airlinename}}</h2>
+<div class="container">
+  <agm-map
 [latitude]="lat"
 [longitude]="lng"
 [zoom]="zoom"
@@ -9,9 +11,13 @@
 >
 
 <agm-direction
-[origin]="origin"
-[destination]="destination"
+[origin]="origincountry"
+[destination]="destinationcountry"
 >
 </agm-direction>
 </agm-map>
+
+
+</div>
+
 

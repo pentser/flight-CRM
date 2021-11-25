@@ -1,7 +1,7 @@
 
 ## install @agm/core ,types
 - npm i @agm/core --force (to add it to angular 12 not update to this version)
-- npm i --save-dev @types/googlemaps@3.39.13   (bug an the last addition? on angular 11)
+- npm i --save-dev @types/googlemaps@3.39.12   (bug an the last addition? on angular 11)
 - npm i agm-direction --force
 
 
