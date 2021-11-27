@@ -17,6 +17,8 @@ export class MapComponent implements OnInit {
    landingtime='';
    remainingtickets='';
 
+   rule='';
+
 
 
     // google map derection
@@ -65,6 +67,8 @@ export class MapComponent implements OnInit {
     this.departuretime=this.route.snapshot.queryParams['departuretime'];
     this.landingtime=this.route.snapshot.queryParams['landingtime'];
     this.remainingtickets=this.route.snapshot.queryParams['remainingtickets'];
+    
+    this.rule=this.route.snapshot.queryParams['rule']
   }
 
 

@@ -40,7 +40,7 @@
           <a  [hidden]="rule!=='Airline'"routerLink="delete" class='m-1'>
           <i class="fas fa-trash-alt"> </i>
         </a>
-         <a routerLink="map"  [queryParams]="{id:flight.id,airlinename: flight.airline_name,origincountry:flight.origin_country_name,destinationcountry:flight.destination_country_name,departuretime:flight.departure_time,landingtime:flight.landing_time,remainingtickets:flight.remaining_tickets}" class="m-1">
+         <a routerLink="map"  [queryParams]="{id:flight.id,airlinename: flight.airline_name,origincountry:flight.origin_country_name,destinationcountry:flight.destination_country_name,departuretime:flight.departure_time,landingtime:flight.landing_time,remainingtickets:flight.remaining_tickets,rule:this.rule}" class="m-1">
           <i class="fas fa-route"></i>
        </a>
         <button [hidden]="rule!=='Customer'" (click)="buyTicket(flight.id)"><i  class="fas fa-ticket-alt"> </i></button>

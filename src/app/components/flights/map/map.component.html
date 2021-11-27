@@ -1,8 +1,13 @@
 
+  <img class="myPlace" src="https://c.tenor.com/yZ7QWZvJ6-4AAAAj/party-travelling.gif" alt="">
+
   <h2 class="display-4 text-center">Flight Details</h2>
   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, repellat?</p>
 
+
+
   <div class="card mb-3" style="max-width: 540px;">
+
     <div class="row g-0">
       <div class="col-md-4">
         <img class="img-thumbnail" src="https://media.istockphoto.com/photos/jerusalem-picture-id173240165?b=1&k=20&m=173240165&s=170667a&w=0&h=FXkPjbAZ9tHSv0UTgurQaAyi8tDsShde4mhlSCl98GA=" alt="jerusalem">
@@ -14,11 +19,12 @@
           <span class="card-text"><small class="text-muted">departure time: {{departuretime}}</small></span><br/>
           <span class="card-text"><small class="text-muted">landing time: {{landingtime}}</small></span>
         </div>
+
       </div>
+
     </div>
+    <button routerLink="../" class="btn btn-primary" [hidden]="rule!=='Customer'"><i  class="fas fa-ticket-alt "> </i> Buy ticket</button>
   </div>
-
-
 
 
 <div class="container mt-2">
@@ -37,7 +43,6 @@
 >
 </agm-direction>
 </agm-map>
-
 
 
 
