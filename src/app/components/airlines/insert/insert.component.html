@@ -20,7 +20,7 @@
             required
             [ngClass]="{ 'is-invalid': airlineF.errors && airlineF.touched }"
             type="text"
-            placeholder={{airline}}
+            placeholder={{airlinename}}
             id="airlinename"
             class="form-control"
             autocomplete="Airline Name"
@@ -100,7 +100,7 @@
 
  <ng-container  *ngIf="isInsert"><p class='text-primary m-2'>your data is inserted</p>
   <button class='btn btn-primary m-2' (click)="back()">Back</button></ng-container>
- <ng-container  *ngIf="!isInsert && !airline"><p class='text-danger m-2'>Your data is not insert, try again letter.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
+ <ng-container  *ngIf="!isInsert && !airlinename"><p class='text-danger m-2'>Your data is not insert, try again letter.</p> <button class='btn btn-primary m-2' (click)="back()">Back</button>
  </ng-container>
 
 

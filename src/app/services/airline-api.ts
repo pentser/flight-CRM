@@ -22,8 +22,12 @@ export class AirlineApi {
     return this.httpClient.get('https://localhost:3000/read-cookies',{withCredentials: true});
   }
 
-  public updateAirline(id,name) {
-    return this.httpClient.put(`https://localhost:3000/admin/api/update_airline`,{id,name},{withCredentials: true});
+  public updateAirline(id,name,country_id,user_id) {
+    return this.httpClient.put(`https://localhost:3000/admin/api/update_airline`,{id,name,country_id,user_id},{withCredentials: true});
+  }
+
+  public insertairline(name,country_id,user_id) {
+    return this.httpClient.post(`https://localhost:3000/admin/api/insert_airline`,{name,country_id,user_id},{withCredentials: true});
   }
 
   public deleteAirline(id) {
@@ -43,9 +47,7 @@ export class AirlineApi {
     return this.httpClient.delete(`https://localhost:3000/admin/api/delete_airline`,options)
   }
 
-  public insertairline(name) {
-    return this.httpClient.post(`https://localhost:3000/admin/api/insert_airline`,{name},{withCredentials: true});
-  }
+
 
 
 

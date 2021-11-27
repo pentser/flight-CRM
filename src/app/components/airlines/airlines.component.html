@@ -3,10 +3,10 @@
     {{ airlines | json }}
   </pre> -->
 
-<button [hidden]="rule!=='Admin'" (click)="getInfo()"><i class="far fa-question-circle text-danger p-2 fs-1"></i></button>
+<button [hidden]="rule!=='Admin'" (click)="getInfo()" ><i class="far fa-question-circle text-danger p-2 fs-1"></i></button>
 
   <h1 class="display-2 text-center mb-3" ><a [hidden]="rule!=='Admin'" routerLink="info" class="m-1">
-    </a>Air Lines <a [hidden]="rule!=='Admin'" routerLink="insert" class="m-1">
+    </a>Air Lines <a [hidden]="rule!=='Admin'" routerLink="insert"  class="m-1">
     <i class="far fa-plus-square"> </i>
   </a></h1>
   <table class="table">
@@ -32,7 +32,7 @@
         <td scope="row">{{airline.country}}</td>
         <td scope="row">{{airline.username}}</td>
         <td scope="row">
-          <a [hidden]="rule!=='Admin'" routerLink="update" [queryParams]="{id:airline.id,name: airline.name,country:airline.country,username:airline.username}"  class='m-1'>
+          <a [hidden]="rule!=='Admin'" routerLink="update" [queryParams]="{id:airline.id,name: airline.name,countryid:airline.country,userid:airline.username}"  class='m-1'>
             <i  class="fas fa-edit"> </i>
           </a>
           <a [hidden]="rule!=='Admin'" routerLink="delete"  [queryParams]="{id:airline.id}" class='m-1'>

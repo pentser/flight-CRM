@@ -21,9 +21,10 @@ export class UpdateComponent implements OnInit,OnDestroy {
 
   constructor(private airlineApi:AirlineApi,private route:ActivatedRoute,private router:Router) {
     this.id=Number(this.route.snapshot.queryParams['id']);
-    this.airline=this.route.snapshot.queryParams['airlinename'];
-    this.countryid=this.route.snapshot.queryParams['countruyid'];
+    this.airline=this.route.snapshot.queryParams['name'];
+    this.countryid=this.route.snapshot.queryParams['countryid'];
     this.userid=this.route.snapshot.queryParams['userid'];
+
   }
 
 
@@ -42,7 +43,7 @@ export class UpdateComponent implements OnInit,OnDestroy {
       {
         console.log("form:",form.value);
 
-        this.onSub=this.airlineApi.updateAirline(this.id,form.value.airlinename).subscribe((data)=>{
+        this.onSub=this.airlineApi.updateAirline(this.id,form.value.name,form.value.countryid,form.value.userid).subscribe((data)=>{
           if(data) {
 
             console.log(data);
