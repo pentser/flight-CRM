@@ -23,6 +23,12 @@ export class SearchApi{
     return this.httpClient.get(`https://localhost:3000/anonymous/api/get_departure_flights?id=${country_id}`,{withCredentials: true});
   }
 
+  public getFlightsByParameters(origin_country_id,destination_country_id,departore_time) {
+    return this.httpClient.get(`https://localhost:3000/anonymous/api/get_flights_by_parameters?from=${origin_country_id}&to=${destination_country_id}&departuretime=${departore_time}`,{withCredentials: true});
+  }
+
+
+
 
 
   }

@@ -1,4 +1,4 @@
-<div *ngIf="airlineApi.airlines| async as airlines">
+<div *ngIf="(rule=='Airline' || rule=='Admin') && airlineApi.airlines| async as airlines">
   <!-- <pre>
     {{ airlines | json }}
   </pre> -->
@@ -47,4 +47,11 @@
     </tbody>
 
     </table>
+</div>
+
+
+<div *ngIf="(rule!=='Airline' && rule!=='Admin')">
+
+  <p class="m-2"> <span class="text-danger">*</span> Only Airline Or Admin Rule can see this data!!! </p>
+
 </div>

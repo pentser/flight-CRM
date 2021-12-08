@@ -1,5 +1,5 @@
 
-<div *ngIf="ticketApi.tickets| async as tickets">
+<div *ngIf="rule!=='Anonymous' && ticketApi.tickets| async as tickets">
  <!--  <pre>
     {{ tickets | json }}
   </pre> -->
@@ -53,4 +53,8 @@
     </table>
 
 
+</div>
+
+<div *ngIf="rule=='Anonymous'">
+  <p class="m-2"> <span class="text-danger">*</span> Only Admin Or Airline/customer Rule can see this data!!! </p>
 </div>

@@ -1,5 +1,5 @@
 
-<div *ngIf="customerApi.customers| async as customers">
+<div *ngIf="(rule=='Customer' || rule=='Admin')  && customerApi.customers | async as customers">
   <!--  <pre>
     {{ customers | json }}
   </pre> -->
@@ -50,6 +50,10 @@
 
     </table>
 
+</div>
+
+<div *ngIf="(rule!=='Customer' && rule!=='Admin')">
+  <p class="m-2"> <span class="text-danger">*</span> Only Customer Or Admin Rule can see this data!!! </p>
 </div>
 
 
