@@ -38,7 +38,7 @@ export class SearchComponent implements OnInit ,OnDestroy{
            console.log('complated')
       })
 
-      this.onSubP=this.searchApi.getFlightsByParameters(form.value.from,form.value.to,form.value.departuretime).subscribe((data)=>{
+      this.onSubP=this.searchApi.getDepartureFlights(form.value.to).subscribe((data)=>{
         this.flights=data;
         this.router.navigate(['/flights/results'],{state:{flights:this.flights}});
 

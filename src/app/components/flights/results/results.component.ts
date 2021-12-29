@@ -19,8 +19,8 @@ export class ResultsComponent implements OnInit {
   username="";
   customer_id="";
 
-  
-  
+
+
   onSub:Subscription=null;
 
   constructor(private router:Router,public flightApi:FlightApi,private ticketApi:TicketApi) {
@@ -55,13 +55,26 @@ export class ResultsComponent implements OnInit {
         {
           let message=`Dear ${this.username}
           you buy ticket id: ${data}.`
-          Swal.fire(message);
-          this.router.navigate(['tickets'])
+          Swal.fire({
+            title: `You get to buy ticket ID:${data}`,
+            text: "Are you sure?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Buy Ticket!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(message);
+              this.router.navigate(['tickets'])
+            }
+          })
+
         }
       })
    })
   }
 
-  
+
 
 }
